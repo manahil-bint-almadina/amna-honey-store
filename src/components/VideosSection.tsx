@@ -74,16 +74,16 @@ export function VideosSection() {
             >
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-bold">
-                  <span className="text-honeyGold">{video.kicker}</span>
-                  <span aria-hidden="true" className="text-inkMuted">
+                  <span className="text-[#F7D78C]">{video.kicker}</span>
+                  <span aria-hidden="true" className="text-[#F7E8D6]/50">
                     ·
                   </span>
-                  <span className="text-inkMuted tabular-nums">{video.duration}</span>
+                  <span className="text-[#F7E8D6]/85 tabular-nums">{video.duration}</span>
                 </div>
-                <h3 className="font-display text-lg sm:text-xl font-bold text-inkDark leading-snug">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-[#FFF9F2] leading-snug">
                   {video.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-inkMuted leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#F7E8D6] leading-relaxed">
                   {video.description}
                 </p>
               </div>

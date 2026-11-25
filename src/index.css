@@ -56,7 +56,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  color: #331B16;
+  color: #FFF9F2;
 }
 
 main {
@@ -69,7 +69,7 @@ main {
 
 /* ===== حاوية المحتوى الرئيسية ===== */
 .container,
-section {
+main > section {
   background: transparent;
   width: 92% !important;
   max-width: 100% !important;
@@ -79,9 +79,21 @@ section {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .container,
+  main > section {
+    width: 94% !important;
+    padding: 14px 10px !important;
+  }
+
+  .main-title,
   h1 {
-    font-size: 1.6rem !important;
-    line-height: 1.3 !important;
+    font-size: 1.4rem !important;
+    line-height: 1.4 !important;
+    margin: 10px 0 !important;
   }
 
   h2 {
@@ -98,6 +110,21 @@ section {
     line-height: 1.6 !important;
   }
 
+  /* النص الوصفي تحت العنوان */
+  .subtitle,
+  .intro-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+    padding: 0 8px !important;
+  }
+
+  /* حاوية المحتوى الرئيسية — زيادة الهوامش */
+  .hero-content-box {
+    padding: 22px 16px !important;
+    margin: 10px auto !important;
+    width: 100% !important;
+  }
+
   /* منع خروج النص عن الحواف */
   * {
     word-wrap: break-word !important;
@@ -109,17 +136,74 @@ section {
   button:not(.cart-btn):not(.shrink-0):not([aria-expanded]):not([aria-label]):not(.rounded-full):not(.grid-cols-3 > button):not(.grid-cols-2 > button):not(footer button):not(.justify-between > button),
   .btn,
   .hero-container a.btn-honey-glow,
-  .hero-container a.glass-enchanted {
+  .hero-container a.bg-\[\#FFF8F0\]\/92 {
     width: 100% !important;
     max-width: 340px !important;
     font-size: 1rem !important;
-    padding: 14px 20px !important;
-    margin-inline: auto;
+    padding: 13px 20px !important;
+    margin: 6px auto !important;
   }
 
   section > div {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+}
+
+/* ===== جعل الصناديق شفافة مثل الجهة اليمنى من الصفحة الأولى ===== */
+.info-box,
+.card,
+.content-box,
+.mission-card,
+.vision-card,
+.objective-card {
+  background: rgba(46, 24, 31, 0.44) !important;
+  background-color: rgba(46, 24, 31, 0.44) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(247, 215, 140, 0.25) !important;
+  box-shadow: 0 12px 32px -10px rgba(24, 10, 14, 0.42) !important;
+  color: #FFF9F2 !important;
+}
+
+/* ===== تحديث لون النص ليكون واضح على الخلفية الشفافة الداكنة ===== */
+.info-box h2,
+.card h2,
+.content-box h2,
+.mission-card h2,
+.vision-card h2,
+.objective-card h2,
+.mission-card h3,
+.vision-card h3,
+.objective-card h3 {
+  color: #FFF9F2 !important;
+}
+
+.info-box p,
+.card p,
+.content-box p,
+.mission-card p,
+.vision-card p,
+.objective-card p {
+  color: #F7E8D6 !important;
+}
+
+/* ===== على الجوال ===== */
+@media (max-width: 768px) {
+  .info-box,
+  .card,
+  .content-box,
+  .mission-card,
+  .vision-card,
+  .objective-card {
+    background: rgba(46, 24, 31, 0.52) !important;
+    background-color: rgba(46, 24, 31, 0.52) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    padding: 20px 15px !important;
+    margin: 10px auto !important;
+    width: 100% !important;
+    border-radius: 16px !important;
   }
 }
 
@@ -143,16 +227,16 @@ section {
     flex-shrink: 0;
   }
 
-  main section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  main > section {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
   }
 
   .hero-container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     text-align: center;
     width: 100%;
   }
@@ -171,23 +255,25 @@ h1, h2, h3, .font-display {
   font-variant-numeric: tabular-nums;
 }
 
-/* Frosted Pearl-Rose Glass Surface allowing animated background & flowers to shine softly through */
+/* Smoky Plum Translucent Glass Surface matching the right hero panel */
 .glass-enchanted {
-  background-color: rgba(255, 248, 241, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(246, 213, 166, 0.75);
+  background-color: rgba(46, 24, 31, 0.44);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(247, 215, 140, 0.26);
   box-shadow:
-    0 12px 32px -10px rgba(54, 24, 24, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    0 12px 32px -10px rgba(24, 10, 14, 0.44),
+    inset 0 1px 0 rgba(255, 244, 224, 0.12);
+  color: #FFF9F2;
 }
 
 /* Subtle Soft Frosted Sub-Surface */
 .glass-enchanted-soft {
-  background-color: rgba(253, 242, 231, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(235, 194, 142, 0.6);
+  background-color: rgba(46, 24, 31, 0.36);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(247, 215, 140, 0.22);
+  color: #F7E8D6;
 }
 
 /* Dark Twilight Rose-Plum Glass Header/Bar */

@@ -67,7 +67,7 @@ export function ProductsSection({
               >
                 <div>
                   {/* Uniform 4:3 Studio Product Image */}
-                  <div className="aspect-[4/3] overflow-hidden bg-creamCard border-b border-[#EBC28E]/55">
+                  <div className="aspect-[4/3] overflow-hidden bg-transparent border-b border-[#F7D78C]/25">
                     <ResilientImage
                       src={prod.image}
                       alt={prod.imageAlt || prod.name}
@@ -81,26 +81,26 @@ export function ProductsSection({
                   <div className="p-5 sm:p-6 space-y-4">
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between gap-2 text-xs font-bold">
-                        <span className="text-honeyGold">{prod.subtitle}</span>
+                        <span className="text-[#F7D78C]">{prod.subtitle}</span>
                         <span
                           className={
-                            prod.available ? 'text-emeraldDeep' : 'text-red-700'
+                            prod.available ? 'text-emerald-300' : 'text-red-300'
                           }
                         >
                           {prod.available ? 'متوفر' : 'غير متوفر'}
                         </span>
                       </div>
-                      <h3 className="font-display text-2xl font-extrabold text-inkDark">
+                      <h3 className="font-display text-2xl font-extrabold text-[#FFF9F2]">
                         {prod.name}
                       </h3>
-                      <p className="text-sm text-inkMuted leading-relaxed">
+                      <p className="text-sm text-[#F7E8D6] leading-relaxed">
                         {prod.description}
                       </p>
                     </div>
 
                     {/* Unified Pricing Table / Weight Selector */}
                     <div className="space-y-2">
-                      <span className="block text-xs font-bold text-inkDark">
+                      <span className="block text-xs font-bold text-[#FFF9F2]">
                         جدول الأسعار واختيار الوزن:
                       </span>
                       <div className="grid grid-cols-3 gap-2">
@@ -113,14 +113,14 @@ export function ProductsSection({
                               onClick={() => onSelectWeight(prod.id, wKey)}
                               className={`min-h-[52px] py-2 px-2 rounded-xl border text-xs font-bold transition cursor-pointer tabular-nums ${
                                 active
-                                  ? 'bg-emeraldDeep text-white border-emeraldDeep shadow-sm'
-                                  : 'bg-[#FFFDF9]/85 text-inkDark border-[#DFB27D]/55 hover:border-honeyGold'
+                                  ? 'bg-[#B87B24] text-white border-[#F7D78C] shadow-sm'
+                                  : 'bg-[#241217]/55 text-[#FFF9F2] border-[#F7D78C]/30 hover:border-[#F7D78C]'
                               }`}
                             >
                               <div className="whitespace-nowrap">{WEIGHT_LABELS[wKey]}</div>
                               <div
                                 className={`text-[11px] mt-0.5 ${
-                                  active ? 'text-[#F7D78C]' : 'text-inkMuted'
+                                  active ? 'text-[#FFF8EE]' : 'text-[#F7D78C]'
                                 }`}
                               >
                                 {prod.prices[wKey]} ر.س
@@ -133,12 +133,12 @@ export function ProductsSection({
 
                     {/* Expandable Tasting & Usage Specifications */}
                     {prod.details && (
-                      <div className="border-t border-[#DFB27D]/40 pt-3">
+                      <div className="border-t border-[#F7D78C]/25 pt-3">
                         <button
                           type="button"
                           aria-expanded={isExpanded}
                           onClick={() => toggleDetails(prod.id)}
-                          className="w-full flex items-center justify-between text-xs font-bold text-emeraldDeep hover:text-honeyGold transition cursor-pointer py-1"
+                          className="w-full flex items-center justify-between text-xs font-bold text-[#F7D78C] hover:text-[#FFF9F2] transition cursor-pointer py-1"
                         >
                           <span>المذاق واللون والفوائد والاستخدام</span>
                           <ChevronDown
@@ -148,33 +148,33 @@ export function ProductsSection({
                           />
                         </button>
                         {isExpanded && (
-                          <dl className="mt-2.5 space-y-2 text-xs text-inkMuted glass-enchanted-soft rounded-xl p-3.5">
+                          <dl className="mt-2.5 space-y-2 text-xs text-[#F7E8D6] glass-enchanted-soft rounded-xl p-3.5">
                             <div>
-                              <dt className="font-bold text-inkDark inline">
+                              <dt className="font-bold text-[#FFF9F2] inline">
                                 المذاق:{' '}
                               </dt>
                               <dd className="inline">{prod.details.taste}</dd>
                             </div>
                             <div>
-                              <dt className="font-bold text-inkDark inline">
+                              <dt className="font-bold text-[#FFF9F2] inline">
                                 اللون:{' '}
                               </dt>
                               <dd className="inline">{prod.details.color}</dd>
                             </div>
                             <div>
-                              <dt className="font-bold text-inkDark inline">
+                              <dt className="font-bold text-[#FFF9F2] inline">
                                 الفوائد:{' '}
                               </dt>
                               <dd className="inline">{prod.details.benefits}</dd>
                             </div>
                             <div>
-                              <dt className="font-bold text-inkDark inline">
+                              <dt className="font-bold text-[#FFF9F2] inline">
                                 الموسم:{' '}
                               </dt>
                               <dd className="inline">{prod.details.season}</dd>
                             </div>
                             <div>
-                              <dt className="font-bold text-inkDark inline">
+                              <dt className="font-bold text-[#FFF9F2] inline">
                                 الاستخدام والتخزين:{' '}
                               </dt>
                               <dd className="inline">
@@ -189,15 +189,15 @@ export function ProductsSection({
                 </div>
 
                 {/* Action Footer: Price + Add to Cart + Direct WhatsApp Order */}
-                <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-4 space-y-3 border-t border-[#DFB27D]/40 bg-[#FCEEE3]/65">
+                <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-4 space-y-3 border-t border-[#F7D78C]/25 bg-[#241217]/45">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <span className="block text-[11px] text-inkMuted">
+                      <span className="block text-[11px] text-[#F7E8D6]/85">
                         السعر المختار
                       </span>
-                      <span className="tabular-nums text-2xl font-extrabold text-emeraldDeep">
+                      <span className="tabular-nums text-2xl font-extrabold text-[#F7D78C]">
                         {currentPrice}{' '}
-                        <span className="text-xs font-bold">ريال</span>
+                        <span className="text-xs font-bold text-[#FFF9F2]">ريال</span>
                       </span>
                     </div>
 
@@ -207,8 +207,8 @@ export function ProductsSection({
                       onClick={() => onAddToCart(prod.id)}
                       className={`min-h-[44px] px-4 py-2 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-1.5 transition whitespace-nowrap ${
                         prod.available
-                          ? 'bg-[#FFFDF9] border border-[#D8A76E]/70 text-inkDark hover:border-honeyGold cursor-pointer'
-                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                          ? 'bg-[#3B2028]/75 border border-[#F7D78C]/45 text-[#FFF9F2] hover:border-[#F7D78C] cursor-pointer'
+                          : 'bg-white/10 text-white/40 cursor-not-allowed'
                       }`}
                     >
                       <ShoppingBag className="w-4 h-4 shrink-0" />
@@ -227,7 +227,7 @@ export function ProductsSection({
                       <span>اطلب عبر واتساب الآن</span>
                     </a>
                   ) : (
-                    <span className="w-full min-h-[46px] px-5 py-2.5 rounded-xl bg-gray-100 text-gray-500 font-bold text-sm inline-flex items-center justify-center">
+                    <span className="w-full min-h-[46px] px-5 py-2.5 rounded-xl bg-white/10 text-white/50 font-bold text-sm inline-flex items-center justify-center">
                       غير متوفر للطلب حالياً
                     </span>
                   )}

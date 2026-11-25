@@ -28,7 +28,7 @@ export function DiarySection({ entries }: DiarySectionProps) {
               key={item.id}
               className="rounded-2xl glass-enchanted overflow-hidden flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-creamCard border-b border-[#DFB27D]/40">
+              <div className="aspect-[4/3] overflow-hidden bg-transparent border-b border-[#F7D78C]/25">
                 <ResilientImage
                   src={item.image}
                   alt={item.imageAlt || item.title}
@@ -38,11 +38,11 @@ export function DiarySection({ entries }: DiarySectionProps) {
                 />
               </div>
               <div className="p-5 sm:p-6 space-y-2 flex-1">
-                <p className="text-xs font-bold text-honeyGold">{item.tag}</p>
-                <h3 className="font-display text-xl font-bold text-inkDark">
+                <p className="text-xs font-bold text-[#F7D78C]">{item.tag}</p>
+                <h3 className="font-display text-xl font-bold text-[#FFF9F2]">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-inkMuted leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#F7E8D6] leading-relaxed">
                   {item.desc}
                 </p>
               </div>

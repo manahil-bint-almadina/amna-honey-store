@@ -64,22 +64,22 @@ export function AboutTrustSection() {
                 return (
                   <div
                     key={val.id}
-                    className="rounded-2xl glass-enchanted p-4 space-y-1.5"
+                    className="mission-card rounded-2xl glass-enchanted p-4 space-y-1.5"
                   >
-                    <div className="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-inkDark">
-                      <Icon className="w-4 h-4 text-honeyGold shrink-0" />
+                    <div className="flex items-center gap-2 font-display font-bold text-sm sm:text-base text-[#FFF9F2]">
+                      <Icon className="w-4 h-4 text-[#F7D78C] shrink-0" />
                       <span>{val.title}</span>
                     </div>
-                    <p className="text-xs text-inkMuted leading-relaxed">{val.desc}</p>
+                    <p className="text-xs text-[#F7E8D6] leading-relaxed">{val.desc}</p>
                   </div>
                 );
               })}
             </div>
 
-            <div className="rounded-2xl glass-enchanted p-4 flex items-center gap-3 text-xs sm:text-sm text-inkDark">
-              <Award className="w-5 h-5 text-honeyGold shrink-0" />
+            <div className="rounded-2xl glass-enchanted p-4 flex items-center gap-3 text-xs sm:text-sm text-[#F7E8D6]">
+              <Award className="w-5 h-5 text-[#F7D78C] shrink-0" />
               <span>
-                <strong>الجهة الصادرة للترخيص:</strong> وزارة البيئة والمياه والزراعة —
+                <strong className="text-[#FFF9F2]">الجهة الصادرة للترخيص:</strong> وزارة البيئة والمياه والزراعة —
                 رخصة نحال ومنحل متنقل معتمدة (مع حجب البيانات الشخصية الحساسة).
               </span>
             </div>
@@ -97,11 +97,11 @@ export function AboutTrustSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4 border-t border-[#DFB27D]/45 bg-[#FFF7EE]/85">
-                <p className="font-display text-sm font-bold text-inkDark">
+              <div className="p-4 border-t border-[#F7D78C]/25 bg-[#241217]/55">
+                <p className="font-display text-sm font-bold text-[#FFF9F2]">
                   خلايا وإنتاج المنحل
                 </p>
-                <p className="text-xs text-inkMuted mt-0.5">
+                <p className="text-xs text-[#F7E8D6] mt-0.5">
                   عسل شمعي صافي من مراعي المدينة المنورة
                 </p>
               </div>
@@ -117,11 +117,11 @@ export function AboutTrustSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4 border-t border-[#DFB27D]/45 bg-[#FFF7EE]/85">
-                <p className="font-display text-sm font-bold text-inkDark">
+              <div className="p-4 border-t border-[#F7D78C]/25 bg-[#241217]/55">
+                <p className="font-display text-sm font-bold text-[#FFF9F2]">
                   الترخيص الرسمي المعتمد
                 </p>
-                <p className="text-xs text-inkMuted mt-0.5">
+                <p className="text-xs text-[#F7E8D6] mt-0.5">
                   وزارة البيئة والمياه والزراعة
                 </p>
               </div>

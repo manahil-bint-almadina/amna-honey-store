@@ -25,16 +25,16 @@ export function HeroSection({ whatsapp }: HeroSectionProps) {
         <div className="hero-container relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
           <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             {/* Hero Headline & Primary CTAs */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-center sm:text-right rounded-2xl bg-[#2E181F]/40 backdrop-blur-[3px] p-4 sm:p-6 border border-[#F7D78C]/20">
-              <p className="text-[14px] sm:text-base font-bold text-[#F7D78C] drop-shadow-xs max-w-full">
+            <div className="hero-content-box lg:col-span-7 space-y-4 sm:space-y-6 text-center sm:text-right rounded-2xl bg-[#2E181F]/40 backdrop-blur-[3px] p-4 sm:p-6 border border-[#F7D78C]/20">
+              <p className="subtitle text-[14px] sm:text-base font-bold text-[#F7D78C] drop-shadow-xs max-w-full">
                 مناحل آمنة عبد الكريم — المدينة المنورة — عسل طبيعي 100%
               </p>
 
-              <h1 className="font-display text-[24px] leading-[1.35] sm:text-5xl lg:text-[3.15rem] font-extrabold text-[#FFF9F2] sm:leading-[1.24] drop-shadow-sm break-words">
+              <h1 className="main-title font-display text-[24px] leading-[1.35] sm:text-5xl lg:text-[3.15rem] font-extrabold text-[#FFF9F2] sm:leading-[1.24] drop-shadow-sm break-words">
                 أمانة اليد، وصفاء الطبيعة في كل قطرة عسل
               </h1>
 
-              <p className="text-[14px] sm:text-lg text-[#F9EFE3] leading-relaxed max-w-full sm:max-w-xl">
+              <p className="intro-text text-[14px] sm:text-lg text-[#F9EFE3] leading-relaxed max-w-full sm:max-w-xl">
                 عسل سدرة بلدي، وعسل طلح أصلي، وعسل سمرة طبيعي من مناحلنا الميدانية في
                 المدينة المنورة بإشراف مباشر وترخيص معتمد من وزارة البيئة والمياه والزراعة.
               </p>
@@ -52,7 +52,7 @@ export function HeroSection({ whatsapp }: HeroSectionProps) {
 
                 <a
                   href="#products"
-                  className="inline-flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[48px] px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl glass-enchanted hover:bg-[#FFFDF9] text-inkDark font-display font-bold text-sm sm:text-base transition"
+                  className="inline-flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[48px] px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#FFF8F0]/92 hover:bg-white text-inkDark border border-[#F7D78C]/50 font-display font-bold text-sm sm:text-base transition"
                 >
                   <span>استعرض أنواع العسل والأسعار</span>
                   <ArrowLeft className="w-4 h-4 shrink-0" />
@@ -82,19 +82,19 @@ export function HeroSection({ whatsapp }: HeroSectionProps) {
               </div>
             </div>
 
-            {/* Compact Cleaned Brand Emblem Showcase Card */}
+            {/* Compact Transparent Smoky Glass Brand Emblem Showcase Card */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="glass-enchanted rounded-2xl p-3 sm:p-5 max-w-[210px] sm:max-w-[340px] w-full text-center space-y-2.5">
-                <div className="aspect-square rounded-xl overflow-hidden bg-[#FFF9F0] border border-[#EBC28E]/70 shadow-sm">
+              <div className="rounded-2xl bg-[#2E181F]/40 backdrop-blur-[6px] border border-[#F7D78C]/25 p-4 sm:p-5 max-w-[230px] sm:max-w-[340px] w-full text-center space-y-3 shadow-luxury">
+                <div className="aspect-square rounded-full overflow-hidden bg-transparent border-2 border-[#F7D78C]/45 shadow-md mx-auto">
                   <ResilientImage
                     src={CLEANED_APIARY_LOGO}
                     alt="الشعار الرسمي النظيف لمناحل بنت المدينة للعسل الطبيعي - نحالة سعودية"
                     fallbackTitle="مناحل بنت المدينة للعسل الطبيعي"
                     loading="eager"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="font-display text-xs sm:text-sm font-bold text-emeraldDeep">
+                <p className="font-display text-xs sm:text-sm font-bold text-[#F7D78C]">
                   مناحل بنت المدينة للعسل الطبيعي · المدينة المنورة
                 </p>
               </div>

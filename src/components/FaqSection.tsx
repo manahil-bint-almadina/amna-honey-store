@@ -45,12 +45,12 @@ export function FaqSection({ whatsapp }: FaqSectionProps) {
 
             <div className="rounded-2xl glass-enchanted p-5 flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-bold text-honeyGold">
+                <p className="text-xs font-bold text-[#F7D78C]">
                   تواصل مباشر عبر واتساب
                 </p>
                 <p
                   dir="ltr"
-                  className="text-lg font-extrabold text-inkDark tabular-nums mt-0.5"
+                  className="text-lg font-extrabold text-[#FFF9F2] tabular-nums mt-0.5"
                 >
                   {formatDisplayPhone(whatsapp)}
                 </p>
@@ -93,17 +93,17 @@ export function FaqSection({ whatsapp }: FaqSectionProps) {
                       type="button"
                       aria-expanded={isOpen}
                       onClick={() => handleToggle(item.id)}
-                      className="w-full min-h-[56px] px-5 py-4 flex items-center justify-between gap-4 text-right font-display font-bold text-sm sm:text-base text-inkDark hover:bg-[#FFFDF9]/50 transition cursor-pointer"
+                      className="w-full min-h-[56px] px-5 py-4 flex items-center justify-between gap-4 text-right font-display font-bold text-sm sm:text-base text-[#FFF9F2] hover:bg-[#4A2832]/40 transition cursor-pointer"
                     >
                       <span>{item.question}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-honeyGold shrink-0 transition-transform duration-200 ${
+                        className={`w-5 h-5 text-[#F7D78C] shrink-0 transition-transform duration-200 ${
                           isOpen ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-5 pt-2 text-sm text-inkMuted leading-relaxed border-t border-[#DFB27D]/40">
+                      <div className="px-5 pb-5 pt-3 text-sm text-[#F7E8D6] leading-relaxed border-t border-[#F7D78C]/20">
                         {item.answer}
                       </div>
                     )}

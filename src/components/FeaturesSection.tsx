@@ -40,15 +40,15 @@ export function FeaturesSection() {
             return (
               <div
                 key={feat.id}
-                className="rounded-2xl glass-enchanted p-5 flex flex-col gap-2.5"
+                className="info-box rounded-2xl glass-enchanted p-5 flex flex-col gap-2.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#FCEBD6] border border-[#E5B87B]/60 text-honeyGold flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#F7D78C]/15 border border-[#F7D78C]/35 text-[#F7D78C] flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h2 className="font-display text-base sm:text-lg font-bold text-inkDark leading-snug">
+                <h2 className="font-display text-base sm:text-lg font-bold text-[#FFF9F2] leading-snug">
                   {feat.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-inkMuted leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#F7E8D6] leading-relaxed">
                   {feat.desc}
                 </p>
               </div>

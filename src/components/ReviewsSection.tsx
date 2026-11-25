@@ -25,20 +25,20 @@ export function ReviewsSection() {
           {CUSTOMER_REVIEWS.map((review) => (
             <blockquote
               key={review.id}
-              className="rounded-2xl glass-enchanted p-6 flex flex-col justify-between gap-5"
+              className="card rounded-2xl glass-enchanted p-6 flex flex-col justify-between gap-5"
             >
               <div className="space-y-3">
-                <Quote className="w-5 h-5 text-honeyGold" aria-hidden="true" />
-                <p className="text-sm sm:text-base text-inkDark leading-relaxed">
+                <Quote className="w-5 h-5 text-[#F7D78C]" aria-hidden="true" />
+                <p className="text-sm sm:text-base text-[#FFF9F2] leading-relaxed">
                   {review.quote}
                 </p>
               </div>
 
-              <footer className="pt-4 border-t border-[#DFB27D]/45 text-xs sm:text-sm space-y-0.5">
-                <div className="font-display font-bold text-inkDark">
+              <footer className="pt-4 border-t border-[#F7D78C]/25 text-xs sm:text-sm space-y-0.5">
+                <div className="font-display font-bold text-[#FFF9F2]">
                   {review.author}
                 </div>
-                <div className="text-xs text-inkMuted">
+                <div className="text-xs text-[#F7E8D6]/85">
                   {review.city} <span aria-hidden="true">·</span> {review.product}
                 </div>
               </footer>

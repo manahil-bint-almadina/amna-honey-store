@@ -17,7 +17,7 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
           <button
             type="button"
             onClick={onBackHome}
-            className="inline-flex items-center gap-2 min-h-[42px] px-4 py-2 rounded-xl glass-enchanted text-sm font-bold text-inkDark hover:border-honeyGold transition cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-2 min-h-[42px] px-4 py-2 rounded-xl glass-enchanted text-sm font-bold text-[#FFF9F2] hover:border-[#F7D78C] transition cursor-pointer whitespace-nowrap shrink-0"
           >
             <ArrowRight className="w-4 h-4 shrink-0" />
             <span>العودة إلى الرئيسية</span>
@@ -33,7 +33,7 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               className={`min-h-[40px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-1.5 transition whitespace-nowrap ${
                 isPrivacy
                   ? 'btn-honey-glow text-white'
-                  : 'glass-enchanted text-inkDark hover:border-honeyGold'
+                  : 'glass-enchanted text-[#FFF9F2] hover:border-[#F7D78C]'
               }`}
             >
               <Shield className="w-4 h-4 shrink-0" />
@@ -49,7 +49,7 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               className={`min-h-[40px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-1.5 transition whitespace-nowrap ${
                 !isPrivacy
                   ? 'btn-honey-glow text-white'
-                  : 'glass-enchanted text-inkDark hover:border-honeyGold'
+                  : 'glass-enchanted text-[#FFF9F2] hover:border-[#F7D78C]'
               }`}
             >
               <FileText className="w-4 h-4 shrink-0" />
@@ -60,29 +60,29 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
 
         {/* Dedicated Legal Document Container */}
         {isPrivacy ? (
-          <article className="rounded-2xl glass-enchanted p-6 sm:p-10 space-y-6">
-            <header className="space-y-2 border-b border-emeraldDeep/10 pb-5">
-              <p className="text-xs sm:text-sm font-bold text-honeyGold">
+          <article className="content-box rounded-2xl glass-enchanted p-6 sm:p-10 space-y-6">
+            <header className="space-y-2 border-b border-[#F7D78C]/25 pb-5">
+              <p className="text-xs sm:text-sm font-bold text-[#F7D78C]">
                 مناحل آمنة عبد الكريم · المدينة المنورة
               </p>
-              <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-inkDark">
+              <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-[#FFF9F2]">
                 سياسة الخصوصية
               </h1>
-              <p className="text-xs text-inkMuted">آخر تحديث: 2026</p>
+              <p className="text-xs text-[#F7E8D6]/80">آخر تحديث: 2026</p>
             </header>
 
-            <div className="space-y-5 text-sm sm:text-base text-inkDark leading-relaxed">
+            <div className="space-y-5 text-sm sm:text-base text-[#F7E8D6] leading-relaxed">
               <p>
-                تلتزم <strong>مناحل آمنة عبد الكريم</strong> بحماية خصوصية زوار
+                تلتزم <strong className="text-[#FFF9F2]">مناحل آمنة عبد الكريم</strong> بحماية خصوصية زوار
                 وعملاء الموقع الإلكتروني، ونوضح فيما يلي آلية التعامل مع أي معلومات
                 تُدخل أثناء التصفح أو عند إرسال الطلبات:
               </p>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   1. البيانات المستخدمة في الطلبات
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   يعتمد الموقع على تجهيز نص الطلب محلياً على جهازك لتحويله مباشرة إلى
                   محادثة واتساب الرسمية للمنحل، ولا يقوم بتخزين بياناتك الشخصية أو
                   رقم جوالك في قواعد بيانات خارجية، كما لا يطلب أي بيانات بطاقات
@@ -91,10 +91,10 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   2. الموقع الجغرافي (GPS)
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   خدمة تحديد الموقع الجغرافي داخل سلة الطلبات اختيارية بالكامل ولا
                   تعمل إلا بموافقتك الصريحة عند النقر عليها، وتُستخدم حصراً لإرسال
                   موقع التوصيل الدقيق داخل المدينة المنورة عبر واتساب.
@@ -102,20 +102,20 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   3. سرية المعلومات وعدم مشاركتها
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   تُستخدم بيانات الاسم ورقم الجوال والعنوان لغرض تنفيذ وتوصيل طلبك
                   فقط، ولا يتم بيعها أو مشاركتها مع أي أطراف تسويقية خارجية.
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   4. التخزين المحلي في المتصفح
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   يحتفظ المتصفح مؤقتاً باختيارات السلة وإعدادات العرض لضمان سرعة
                   التصفح، ويمكنك مسحها في أي وقت من إعدادات متصفحك.
                 </p>
@@ -123,29 +123,29 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
             </div>
           </article>
         ) : (
-          <article className="rounded-2xl glass-enchanted p-6 sm:p-10 space-y-6">
-            <header className="space-y-2 border-b border-emeraldDeep/10 pb-5">
-              <p className="text-xs sm:text-sm font-bold text-honeyGold">
+          <article className="content-box rounded-2xl glass-enchanted p-6 sm:p-10 space-y-6">
+            <header className="space-y-2 border-b border-[#F7D78C]/25 pb-5">
+              <p className="text-xs sm:text-sm font-bold text-[#F7D78C]">
                 مناحل آمنة عبد الكريم · المدينة المنورة
               </p>
-              <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-inkDark">
+              <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-[#FFF9F2]">
                 شروط الاستخدام
               </h1>
-              <p className="text-xs text-inkMuted">آخر تحديث: 2026</p>
+              <p className="text-xs text-[#F7E8D6]/80">آخر تحديث: 2026</p>
             </header>
 
-            <div className="space-y-5 text-sm sm:text-base text-inkDark leading-relaxed">
+            <div className="space-y-5 text-sm sm:text-base text-[#F7E8D6] leading-relaxed">
               <p>
-                باستخدامك موقع <strong>مناحل آمنة عبد الكريم</strong> أو إرسال طلب
+                باستخدامك موقع <strong className="text-[#FFF9F2]">مناحل آمنة عبد الكريم</strong> أو إرسال طلب
                 عبر واتساب، فإنك توافق على الشروط والأحكام التالية المصاغة بوضوح
                 لحفظ حقوق الطرفين:
               </p>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   1. المنتجات والأسعار
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   جميع المنتجات المعروضة (عسل سدرة بلدي، عسل طلح بلدي، عسل سمرة
                   بلدي) طبيعية 100% ومن إنتاج مناحل مرخصة من وزارة البيئة والمياه
                   والزراعة. الأسعار المعلنة بالريال السعودي تخص العبوة المختارة ولا
@@ -154,10 +154,10 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   2. آلية الطلب والدفع والتوصيل
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   • داخل المدينة المنورة: التوصيل فوري وتتوفر إمكانية الدفع عند
                   الاستلام أو التحويل البنكي.
                   <br />• خارج المدينة المنورة: يتم الشحن عبر الشركات المختصة بعد
@@ -167,10 +167,10 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   3. ضمان الجودة والاسترجاع والاسترداد
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   نضمن طبيعية العسل وخلوه من أي إضافات بنسبة 100%. في حال عدم رضا
                   العميل أو وجود أي ملاحظة على سلامة المنتج وجودته، يلتزم المنحل
                   باسترجاع الطلب واسترداد كامل المبلغ المدفوع.
@@ -178,10 +178,10 @@ export function LegalPage({ mode, onBackHome, onSwitchMode }: LegalPageProps) {
               </section>
 
               <section className="space-y-2">
-                <h2 className="font-display text-xl font-bold text-emeraldDeep">
+                <h2 className="font-display text-xl font-bold text-[#F7D78C]">
                   4. الملكية الفكرية
                 </h2>
-                <p className="text-inkMuted">
+                <p className="text-[#F7E8D6]">
                   جميع النصوص والصور ومقاطع الفيديو المنشورة خاصة بموقع مناحل آمنة
                   عبد الكريم ولا يُسمح بإعادة استخدامها تجارياً دون إذن مسبق.
                 </p>
