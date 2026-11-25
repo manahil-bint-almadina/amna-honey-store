@@ -280,10 +280,10 @@ export function HoneyAssistant({ store }: HoneyAssistantProps) {
         onClick={() => setIsOpen((v) => !v)}
         aria-label="اسأل عن العسل"
         title="اسأل عن العسل"
-        className="fixed bottom-[4.25rem] md:bottom-5 right-4 z-40 w-14 h-14 rounded-full glass-twilight border border-[#F5D38C]/75 shadow-luxury flex items-center justify-center hover:scale-105 active:scale-95 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5D38C]"
+        className="fixed bottom-[3.9rem] md:bottom-5 right-3 md:right-4 z-40 w-11 h-11 md:w-14 md:h-14 rounded-full glass-twilight border border-[#F5D38C]/75 shadow-luxury flex items-center justify-center hover:scale-105 active:scale-95 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5D38C]"
       >
-        <span className="w-11 h-11 rounded-full btn-honey-glow flex items-center justify-center">
-          <BeeIcon className="w-7 h-7" animated />
+        <span className="w-8 h-8 md:w-11 md:h-11 rounded-full btn-honey-glow flex items-center justify-center">
+          <BeeIcon className="w-5 h-5 md:w-7 md:h-7" animated />
         </span>
       </button>
 

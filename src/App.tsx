@@ -186,10 +186,10 @@ export default function App() {
           src={ENCHANTED_BACKDROP_IMAGE}
           alt=""
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-top opacity-90"
+          className="w-full h-full object-cover object-[26%_top] md:object-top opacity-100 contrast-[1.03] saturate-[1.05]"
         />
         <EnchantedMotionLayer variant="ambient" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3E242C]/50 via-[#664148]/42 to-[#321C22]/64" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2A161C]/18 via-transparent to-[#2A161C]/32" />
       </div>
 
       {/* Floating Background Flowers */}

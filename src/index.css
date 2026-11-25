@@ -120,8 +120,11 @@ main > section {
 
   /* حاوية المحتوى الرئيسية — زيادة الهوامش */
   .hero-content-box {
-    padding: 22px 16px !important;
-    margin: 10px auto !important;
+    background-color: rgba(42, 20, 27, 0.34) !important;
+    backdrop-filter: blur(2.5px) !important;
+    -webkit-backdrop-filter: blur(2.5px) !important;
+    padding: 20px 15px !important;
+    margin: 8px auto !important;
     width: 100% !important;
   }
 
@@ -139,8 +142,8 @@ main > section {
   .hero-container a.bg-\[\#FFF8F0\]\/92 {
     width: 100% !important;
     max-width: 340px !important;
-    font-size: 1rem !important;
-    padding: 13px 20px !important;
+    font-size: 0.95rem !important;
+    padding: 12px 18px !important;
     margin: 6px auto !important;
   }
 
@@ -157,13 +160,14 @@ main > section {
 .mission-card,
 .vision-card,
 .objective-card {
-  background: rgba(46, 24, 31, 0.44) !important;
-  background-color: rgba(46, 24, 31, 0.44) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(247, 215, 140, 0.25) !important;
-  box-shadow: 0 12px 32px -10px rgba(24, 10, 14, 0.42) !important;
+  background: rgba(42, 20, 27, 0.36) !important;
+  background-color: rgba(42, 20, 27, 0.36) !important;
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+  border: 1px solid rgba(247, 215, 140, 0.28) !important;
+  box-shadow: 0 10px 28px -10px rgba(24, 10, 14, 0.42) !important;
   color: #FFF9F2 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 /* ===== تحديث لون النص ليكون واضح على الخلفية الشفافة الداكنة ===== */
@@ -196,11 +200,11 @@ main > section {
   .mission-card,
   .vision-card,
   .objective-card {
-    background: rgba(46, 24, 31, 0.52) !important;
-    background-color: rgba(46, 24, 31, 0.52) !important;
-    backdrop-filter: blur(6px) !important;
-    -webkit-backdrop-filter: blur(6px) !important;
-    padding: 20px 15px !important;
+    background: rgba(42, 20, 27, 0.38) !important;
+    background-color: rgba(42, 20, 27, 0.38) !important;
+    backdrop-filter: blur(2.5px) !important;
+    -webkit-backdrop-filter: blur(2.5px) !important;
+    padding: 18px 14px !important;
     margin: 10px auto !important;
     width: 100% !important;
     border-radius: 16px !important;
@@ -228,14 +232,14 @@ main > section {
   }
 
   main > section {
-    padding-top: 1.75rem !important;
-    padding-bottom: 1.75rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 
   .hero-container {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    padding-top: 1.25rem;
+    padding-top: 4.5rem;
     padding-bottom: 1.25rem;
     text-align: center;
     width: 100%;
@@ -257,21 +261,22 @@ h1, h2, h3, .font-display {
 
 /* Smoky Plum Translucent Glass Surface matching the right hero panel */
 .glass-enchanted {
-  background-color: rgba(46, 24, 31, 0.44);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(247, 215, 140, 0.26);
+  background-color: rgba(42, 20, 27, 0.36);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(247, 215, 140, 0.28);
   box-shadow:
-    0 12px 32px -10px rgba(24, 10, 14, 0.44),
-    inset 0 1px 0 rgba(255, 244, 224, 0.12);
+    0 10px 28px -10px rgba(24, 10, 14, 0.42),
+    inset 0 1px 0 rgba(255, 244, 224, 0.14);
   color: #FFF9F2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Subtle Soft Frosted Sub-Surface */
 .glass-enchanted-soft {
-  background-color: rgba(46, 24, 31, 0.36);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(42, 20, 27, 0.3);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
   border: 1px solid rgba(247, 215, 140, 0.22);
   color: #F7E8D6;
 }

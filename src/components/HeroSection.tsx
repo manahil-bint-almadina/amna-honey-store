@@ -21,11 +21,11 @@ export function HeroSection({ whatsapp }: HeroSectionProps) {
       className="hero relative w-full overflow-hidden bg-transparent border-b border-[#F3D598]/25"
     >
       {/* Transparent Hero sitting directly over the fixed animated palace & flower backdrop */}
-      <div className="relative min-h-0 lg:min-h-[560px] flex items-center bg-gradient-to-b from-[#2E181F]/35 via-transparent to-[#2E181F]/30">
+      <div className="relative min-h-0 lg:min-h-[560px] flex items-center bg-transparent">
         <div className="hero-container relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
           <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             {/* Hero Headline & Primary CTAs */}
-            <div className="hero-content-box lg:col-span-7 space-y-4 sm:space-y-6 text-center sm:text-right rounded-2xl bg-[#2E181F]/40 backdrop-blur-[3px] p-4 sm:p-6 border border-[#F7D78C]/20">
+            <div className="hero-content-box lg:col-span-7 space-y-4 sm:space-y-6 text-center sm:text-right rounded-2xl bg-[#2E181F]/34 backdrop-blur-[3px] p-4 sm:p-6 border border-[#F7D78C]/25">
               <p className="subtitle text-[14px] sm:text-base font-bold text-[#F7D78C] drop-shadow-xs max-w-full">
                 مناحل آمنة عبد الكريم — المدينة المنورة — عسل طبيعي 100%
               </p>
@@ -60,7 +60,7 @@ export function HeroSection({ whatsapp }: HeroSectionProps) {
               </div>
 
               {/* Concise Bottom Trust Markers */}
-              <div className="pt-3 border-t border-[#F7D78C]/25 flex flex-wrap items-center justify-center sm:justify-start gap-x-3 sm:gap-x-4 gap-y-2 text-xs sm:text-sm font-bold text-[#FFF6E8]">
+              <div className="pt-3 border-t border-[#F7D78C]/25 flex flex-wrap items-center justify-center sm:justify-start gap-x-2 sm:gap-x-4 gap-y-1.5 text-[11px] sm:text-sm font-bold text-[#FFF6E8]">
                 <span className="inline-flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-[#F7D78C] shrink-0" />
                   <span>طبيعي 100%</span>

@@ -102,8 +102,8 @@ export function EnchantedMotionLayer({
       <div
         className={`absolute ${
           isHero
-            ? 'left-[20%] sm:left-[32.5%] top-[24%] w-[16%] sm:w-[9%] h-[42%]'
-            : 'left-[20%] sm:left-[33%] top-[24%] w-[15%] sm:w-[8.5%] h-[40%]'
+            ? 'left-[43%] sm:left-[32.5%] top-[24%] w-[12%] sm:w-[9%] h-[42%]'
+            : 'left-[43%] sm:left-[33%] top-[24%] w-[12%] sm:w-[8.5%] h-[40%]'
         }`}
       >
         {/* Warm radiant palace gate glow */}
