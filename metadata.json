@@ -1,0 +1,10 @@
+{
+  "name": " مناحل آمنة عبد الكريم",
+  "description": "متجر ومنحل آمنة عبد الكريم للعسل البلدي الأصيل في المدينة المنورة — عسل السدرة والطلح والسمرة.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

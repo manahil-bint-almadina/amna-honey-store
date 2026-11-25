@@ -1,0 +1,417 @@
+@import "tailwindcss";
+
+@theme {
+  /* Enchanted Rose-Gold, Twilight Plum & Warm Honey Palette (matching reference design) */
+  --color-emeraldDeep: #5C3328;
+  --color-emeraldSoft: #7A473A;
+  --color-honeyGold: #9C6214;
+  --color-honeyLight: #C88A2E;
+  --color-creamBase: #FFF9F2;
+  --color-creamCard: #FCEEE3;
+  --color-inkDark: #331B16;
+  --color-inkMuted: #6B4A41;
+
+  --font-display: "Tajawal", system-ui, -apple-system, sans-serif;
+  --font-sans: "Noto Naskh Arabic", "Tajawal", system-ui, sans-serif;
+
+  --shadow-luxury: 0 14px 34px -10px rgba(58, 28, 28, 0.28);
+  --shadow-goldGlow: 0 8px 22px -6px rgba(184, 123, 36, 0.45);
+}
+
+@layer base {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  img,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #3D252C;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-sans);
+  background: transparent;
+  color: #331B16;
+}
+
+main,
+section {
+  background: transparent;
+}
+
+@media (max-width: 640px) {
+  header,
+  .topbar {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 8px;
+    max-width: 100vw;
+  }
+
+  .brand-title {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .cart-btn {
+    padding: 6px 10px;
+    font-size: 12.5px;
+    flex-shrink: 0;
+  }
+
+  main section {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  main section h2 {
+    font-size: 1.4rem;
+    line-height: 1.35;
+  }
+
+  main section h3 {
+    font-size: 1.125rem;
+  }
+
+  .hero-container {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  .hero p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Frosted Pearl-Rose Glass Surface allowing animated background & flowers to shine softly through */
+.glass-enchanted {
+  background-color: rgba(255, 248, 241, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(246, 213, 166, 0.75);
+  box-shadow:
+    0 12px 32px -10px rgba(54, 24, 24, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+/* Subtle Soft Frosted Sub-Surface */
+.glass-enchanted-soft {
+  background-color: rgba(253, 242, 231, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(235, 194, 142, 0.6);
+}
+
+/* Dark Twilight Rose-Plum Glass Header/Bar */
+.glass-twilight {
+  background-color: rgba(56, 32, 38, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(243, 213, 152, 0.28);
+}
+
+/* Luminous Honey Gold CTA Button Gradient with WCAG AA Contrast */
+.btn-honey-glow {
+  background-image: linear-gradient(to left, #8E5614, #A96D1E, #C5862B);
+  border: 1px solid rgba(255, 232, 189, 0.55);
+  box-shadow: 0 8px 22px -6px rgba(169, 109, 30, 0.52);
+}
+
+.btn-honey-glow:hover {
+  filter: brightness(1.07);
+}
+
+/* Enchanted Background Animations (GPU compositor-only: transform & opacity) */
+@keyframes honeyStreamFlow {
+  0% {
+    transform: translate3d(0, -35%, 0) scaleY(0.95);
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.92;
+  }
+  100% {
+    transform: translate3d(0, 45%, 0) scaleY(1.08);
+    opacity: 0.15;
+  }
+}
+
+@keyframes honeyDropFall {
+  0% {
+    transform: translate3d(0, -10px, 0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.95;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(0, 150px, 0) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes honeyPoolRipple {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.65);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.65);
+    opacity: 0;
+  }
+}
+
+@keyframes palaceGlowPulse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.96);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+@keyframes flowerSwaySlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-3.2deg);
+  }
+  50% {
+    transform: translate3d(4px, -3px, 0) rotate(3.4deg);
+  }
+}
+
+@keyframes flowerSwayAlt {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(2.8deg);
+  }
+  50% {
+    transform: translate3d(-4px, -4px, 0) rotate(-3.5deg);
+  }
+}
+
+@keyframes petalDrift {
+  0% {
+    transform: translate3d(0, -12px, 0) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.88;
+  }
+  80% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(38px, 140px, 0) rotate(135deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes butterflyFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-4deg) scale(1);
+  }
+  33% {
+    transform: translate3d(10px, -12px, 0) rotate(5deg) scale(1.06);
+  }
+  66% {
+    transform: translate3d(-8px, -6px, 0) rotate(-2deg) scale(0.96);
+  }
+}
+
+.animate-honey-stream {
+  animation: honeyStreamFlow 3.2s linear infinite;
+}
+
+.animate-honey-stream-slow {
+  animation: honeyStreamFlow 4.4s linear infinite;
+}
+
+.animate-honey-drop {
+  animation: honeyDropFall 2.8s ease-in infinite;
+}
+
+.animate-honey-ripple {
+  animation: honeyPoolRipple 3.2s ease-out infinite;
+}
+
+.animate-palace-glow {
+  animation: palaceGlowPulse 4s ease-in-out infinite;
+}
+
+.animate-flower-sway {
+  animation: flowerSwaySlow 6.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-flower-sway-alt {
+  animation: flowerSwayAlt 7.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-petal-drift {
+  animation: petalDrift 9s ease-in-out infinite;
+}
+
+.animate-butterfly-float {
+  animation: butterflyFloat 7.2s ease-in-out infinite;
+}
+
+@keyframes beeHover {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0) rotate(3deg);
+  }
+}
+
+@keyframes beeWingFlutter {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.55) scaleX(1.06);
+  }
+}
+
+.animate-bee-hover {
+  animation: beeHover 2.4s ease-in-out infinite;
+}
+
+.animate-bee-wing {
+  animation: beeWingFlutter 0.22s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+
+.flower-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.flower {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='%23F9C1B6'%3E%3Cellipse cx='60' cy='28' rx='16' ry='26'/%3E%3Cellipse cx='60' cy='28' rx='16' ry='26' transform='rotate(72 60 60)'/%3E%3Cellipse cx='60' cy='28' rx='16' ry='26' transform='rotate(144 60 60)'/%3E%3Cellipse cx='60' cy='28' rx='16' ry='26' transform='rotate(216 60 60)'/%3E%3Cellipse cx='60' cy='28' rx='16' ry='26' transform='rotate(288 60 60)'/%3E%3C/g%3E%3Ccircle cx='60' cy='60' r='11' fill='%23F9D77E'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.34;
+  transform: translateY(110vh);
+  animation: floatFlower 15s infinite ease-in-out;
+}
+
+.flower-1 {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.flower-2 {
+  left: 30%;
+  animation-delay: 3s;
+  width: 50px;
+  height: 50px;
+}
+
+.flower-3 {
+  left: 50%;
+  animation-delay: 6s;
+  width: 35px;
+  height: 35px;
+}
+
+.flower-4 {
+  left: 70%;
+  animation-delay: 9s;
+  width: 45px;
+  height: 45px;
+}
+
+.flower-5 {
+  left: 90%;
+  animation-delay: 12s;
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes floatFlower {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4B2E35;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C88A2E;
+  border-radius: 9999px;
+}

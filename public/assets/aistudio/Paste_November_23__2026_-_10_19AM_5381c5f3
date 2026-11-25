@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مناحل آمنة عبد الكريم | عسل بلدي أصيل من المدينة المنورة</title>
+  <meta name="theme-color" content="#163225" />
+
+  <!-- Google Fonts: Amiri & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldDeep: '#163225',
+            emeraldSoft: '#224A38',
+            honeyGold: '#C59B27',
+            honeyLight: '#E5C158',
+            creamBase: '#FAF7F2',
+            creamCard: '#FFFFFF',
+            inkDark: '#1A241F',
+            inkMuted: '#5C6B63',
+          },
+          fontFamily: {
+            serifDisplay: ['Amiri', 'serif'],
+            sansBody: ['Tajawal', 'sans-serif'],
+          },
+          boxShadow: {
+            luxury: '0 20px 45px -15px rgba(22, 50, 37, 0.12)',
+            goldGlow: '0 10px 25px -5px rgba(197, 155, 39, 0.35)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #FAF7F2;
+      color: #1A241F;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .font-display {
+      font-family: 'Amiri', serif;
+    }
+    .honeycomb-bg {
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(197, 155, 39, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(22, 50, 37, 0.07) 0%, transparent 50%);
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1ECE1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C59B27;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="honeycomb-bg min-h-screen flex flex-col">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100] hidden transition-all duration-300">
+    <div id="toastInner" class="bg-emeraldDeep text-creamBase px-5 py-3 rounded-full shadow-luxury border border-honeyGold/40 flex items-center gap-2 text-sm font-medium">
+      <i data-lucide="check-circle-2" class="w-4 h-4 text-honeyLight"></i>
+      <span id="toastText">تم النسخ بنجاح</span>
+    </div>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-honeyGold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emeraldDeep to-emeraldSoft border border-honeyGold/50 flex items-center justify-center shadow-md group-hover:scale-105 transition">
+          <i data-lucide="hexagon" class="w-6 h-6 text-honeyLight fill-honeyGold/20"></i>
+        </div>
+        <div>
+          <span class="block font-display text-xl sm:text-2xl font-bold text-emeraldDeep leading-tight">مناحل آمنة عبد الكريم</span>
+          <span class="block text-xs text-inkMuted font-medium">عسل بلدي أصيل من قلب المدينة المنورة</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-inkDark">
+        <a href="#story" class="hover:text-honeyGold transition">قصتنا والعناية</a>
+        <a href="#products" class="hover:text-honeyGold transition">متجر العسل</a>
+        <a href="#diary" class="hover:text-honeyGold transition">يوميات المنحل</a>
+        <a href="#delivery-info" class="hover:text-honeyGold transition">التوصيل والدفع</a>
+      </nav>
+
+      <!-- Actions: WhatsApp & Cart -->
+      <div class="flex items-center gap-2.5">
+        <a id="headerWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer"
+           class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emeraldDeep text-creamBase hover:bg-emeraldSoft text-xs font-bold transition shadow-sm">
+          <i data-lucide="message-circle" class="w-4 h-4 text-honeyLight"></i>
+          <span>تواصل واتساب</span>
+        </a>
+
+        <button onclick="openCart()" class="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-l from-honeyGold to-honeyLight text-emeraldDeep font-extrabold text-xs sm:text-sm shadow-goldGlow hover:brightness-105 transition cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>السلة</span>
+          <span id="cartBadge" class="bg-emeraldDeep text-honeyLight text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Story Section -->
+  <section id="story" class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
+      <!-- Text Side -->
+      <div class="lg:col-span-7 space-y-6 text-right">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emeraldDeep/5 border border-honeyGold/40 text-emeraldDeep text-xs sm:text-sm font-bold">
+          <i data-lucide="sparkles" class="w-4 h-4 text-honeyGold"></i>
+          <span>رعاية يدوية أمينة • فرز طبيعي • المدينة المنورة</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-emeraldDeep leading-[1.2]">
+          أمانة اليد، وصفاء الطبيعة في كل قطرة عسل
+        </h1>
+
+        <p class="text-base sm:text-lg text-inkMuted leading-relaxed max-w-2xl">
+          تُشرف النحّالة <strong class="text-emeraldDeep">آمنة عبد الكريم</strong> بنفسها على خلايا النحل في المدينة المنورة، وتتابع مواسم التزهير، وتعتني بالخلايا والفرز بكل إتقان وتفانٍ، لتقدم لكم عسل <span class="text-emeraldDeep font-bold">السدرة</span> و<span class="text-emeraldDeep font-bold">الطلح</span> و<span class="text-emeraldDeep font-bold">السمرة</span> بجودة تليق بضيوف المدينة وأهلها.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+          <a href="#products" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-l from-honeyGold to-honeyLight text-emeraldDeep font-extrabold text-sm sm:text-base shadow-goldGlow hover:-translate-y-0.5 transition">
+            <span>تصفح واطلب العسل الآن</span>
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </a>
+          <a href="#diary" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-emeraldDeep/15 text-emeraldDeep font-bold text-sm sm:text-base hover:border-honeyGold transition shadow-sm">
+            <i data-lucide="sun" class="w-4 h-4 text-honeyGold"></i>
+            <span>كيف نعتني بالنحل؟</span>
+          </a>
+        </div>
+
+        <!-- Trust Highlights -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-5 pt-4 border-t border-emeraldDeep/10 max-w-xl">
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-honeyGold/20">
+            <div class="text-xl sm:text-2xl font-extrabold text-emeraldDeep">3 أنواع</div>
+            <div class="text-xs text-inkMuted mt-0.5">سدرة • طلح • سمرة</div>
+          </div>
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-honeyGold/20">
+            <div class="text-xl sm:text-2xl font-extrabold text-emeraldDeep">توصيل فوري</div>
+            <div class="text-xs text-inkMuted mt-0.5">داخل المدينة المنورة</div>
+          </div>
+          <div class="bg-white/80 rounded-2xl p-3 sm:p-4 border border-honeyGold/20">
+            <div class="text-xl sm:text-2xl font-extrabold text-emeraldDeep">عناية مباشرة</div>
+            <div class="text-xs text-inkMuted mt-0.5">بإشراف النحّالة نفسها</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Showcase Side -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-[2rem] overflow-hidden shadow-luxury border-2 border-honeyGold/35 bg-emeraldDeep text-creamBase">
+          <img
+            src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1000&q=80"
+            alt="عسل بلدي فاخر وقرص شمع طبيعي"
+            class="w-full h-[380px] sm:h-[450px] object-cover opacity-85"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-emeraldDeep via-emeraldDeep/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-6 sm:p-7 space-y-2">
+            <span class="inline-block px-3 py-1 rounded-full bg-honeyGold/25 border border-honeyLight/40 text-honeyLight text-xs font-bold">
+              إنتاج بلدي موثوق
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">نقاء يبدأ من الخلية وينتهي عند مائدتك</h2>
+            <p class="text-xs sm:text-sm text-creamBase/85 leading-relaxed">
+              متابعة مستمرة لصحة النحل وتهيئة البيئة المناسبة لكل موسم لضمان جودة القوام والنكهة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Store Section -->
+  <section id="products" class="py-16 sm:py-24 bg-white/60 border-y border-honeyGold/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <span class="text-xs sm:text-sm font-extrabold tracking-wide text-honeyGold uppercase">تشكيلة العسل البلدي</span>
+        <h2 class="text-3xl sm:text-5xl font-bold text-emeraldDeep">اختر نوع العسل والوزن المناسب</h2>
+        <p class="text-sm sm:text-base text-inkMuted">
+          أسعار موحدة وواضحة لجميع الأنواع: <strong class="text-emeraldDeep">ربع كيلو (150 ر.س)</strong> • <strong class="text-emeraldDeep">نصف كيلو (250 ر.س)</strong> • <strong class="text-emeraldDeep">كيلو (400 ر.س)</strong>
+        </p>
+      </div>
+
+      <div id="productsGrid" class="grid md:grid-cols-3 gap-7 lg:gap-8">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Beekeeping Diary Section -->
+  <section id="diary" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div class="space-y-2">
+          <span class="text-xs sm:text-sm font-extrabold text-honeyGold">شفافية وثقة في كل خطوة</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-emeraldDeep">يوميات المنحل والعناية بالنحل</h2>
+          <p class="text-sm sm:text-base text-inkMuted max-w-2xl">
+            تعرّف على كيف تعتني النحّالة آمنة عبد الكريم بخلايا النحل وتتابع مراحل الموسم خطوة بخطوة.
+          </p>
+        </div>
+      </div>
+
+      <div id="diaryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery & Payment Policy Section -->
+  <section id="delivery-info" class="py-14 sm:py-20 bg-emeraldDeep text-creamBase">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="text-xs font-bold text-honeyLight">آلية الطلب والتسليم</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">التوصيل والدفع بكل وضوح ويسر</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Inside Madinah -->
+        <div class="rounded-3xl bg-emeraldSoft/80 border border-honeyGold/25 p-6 space-y-3">
+          <div class="w-11 h-11 rounded-2xl bg-honeyGold/20 flex items-center justify-center text-honeyLight">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-honeyLight">داخل المدينة المنورة</h3>
+          <p class="text-sm text-creamBase/90 leading-relaxed">
+            التوصيل <strong>فوري</strong> مع احتساب رسوم التوصيل حسب الموقع المرسل (ويمكنك تحديد موقعك عبر GPS مباشرة في السلة).
+          </p>
+          <p class="text-xs text-honeyLight font-bold pt-1">
+            ✓ يتوفر الدفع عند الاستلام داخل المدينة المنورة فقط.
+          </p>
+        </div>
+
+        <!-- Outside Madinah -->
+        <div class="rounded-3xl bg-emeraldSoft/80 border border-honeyGold/25 p-6 space-y-3">
+          <div class="w-11 h-11 rounded-2xl bg-honeyGold/20 flex items-center justify-center text-honeyLight">
+            <i data-lucide="truck" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-honeyLight">خارج المدينة المنورة</h3>
+          <p class="text-sm text-creamBase/90 leading-relaxed">
+            التوصيل والشحن متاح إلى مختلف المناطق وتُحدد آليته وتكلفته بحسب المنطقة.
+          </p>
+          <p class="text-xs text-amber-200 font-bold pt-1">
+            ✕ لا يتوفر الدفع عند الاستلام خارج المدينة؛ الدفع بالتحويل المسبق فقط.
+          </p>
+        </div>
+
+        <!-- Bank Transfer -->
+        <div class="rounded-3xl bg-white text-inkDark p-6 space-y-3 shadow-luxury">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-emeraldDeep/10 text-emeraldDeep">مصرف الراجحي</span>
+            <i data-lucide="landmark" class="w-5 h-5 text-honeyGold"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-emeraldDeep">بيانات التحويل البنكي</h3>
+          <div class="text-sm space-y-1.5">
+            <div><span class="text-inkMuted">الاسم للتحويل:</span> <strong class="text-emeraldDeep">آمنة عبد الكريم</strong></div>
+            <div class="bg-creamBase p-2.5 rounded-xl border border-honeyGold/30 flex items-center justify-between gap-2">
+              <code id="staticIbanText" class="text-xs font-bold text-emeraldDeep select-all">SA09 8000 0272 6080 1030 2900</code>
+              <button onclick="copyIban()" class="px-2.5 py-1 rounded-lg bg-emeraldDeep text-honeyLight text-xs font-bold hover:bg-emeraldSoft transition cursor-pointer shrink-0">
+                نسخ الآيبان
+              </button>
+            </div>
+          </div>
+          <p class="text-xs text-inkMuted leading-relaxed">
+            لتأكيد الطلب يرجى ترك رسالة أو تحويل مبلغ العسل المطلوب وإرسال الإيصال والطلبات التي تودها عبر الواتساب.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-[#10251B] text-creamBase/80 py-8 border-t border-honeyGold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+      <div>
+        <strong class="text-white">مناحل آمنة عبد الكريم</strong> — عسل بلدي من المدينة المنورة • واتساب: <span id="footerPhoneDisplay">0597176168</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="openAdminModal()" class="inline-flex items-center gap-1.5 text-honeyLight/80 hover:text-honeyLight underline underline-offset-4 cursor-pointer">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+          <span>إدارة المنحل</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Modal -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="closeCart()" class="fixed inset-0 bg-black/55 backdrop-blur-xs"></div>
+    <div class="fixed inset-y-0 left-0 max-w-lg w-full bg-creamBase shadow-2xl flex flex-col z-10 border-r border-honeyGold/30">
+      <!-- Header -->
+      <div class="p-5 bg-emeraldDeep text-creamBase flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-honeyLight"></i>
+          <h3 class="font-display text-2xl font-bold text-white">سلة الطلبات</h3>
+        </div>
+        <button onclick="closeCart()" class="p-2 rounded-xl hover:bg-white/10 transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-5">
+        <!-- Items List -->
+        <div id="cartItemsContainer" class="space-y-3">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Customer & Delivery Form -->
+        <div id="checkoutFormBox" class="bg-white rounded-2xl p-4 sm:p-5 border border-honeyGold/25 space-y-4 shadow-xs">
+          <h4 class="font-bold text-emeraldDeep text-sm flex items-center gap-2">
+            <i data-lucide="user-check" class="w-4 h-4 text-honeyGold"></i>
+            <span>بيانات العميل والتوصيل</span>
+          </h4>
+
+          <div>
+            <label class="block text-xs font-bold text-inkDark mb-1">الاسم الكامل *</label>
+            <input id="customerName" type="text" placeholder="اكتب اسمك الكريم"
+                   class="w-full px-3.5 py-2.5 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm focus:outline-none focus:border-honeyGold" />
+          </div>
+
+          <!-- Location Zone -->
+          <div>
+            <label class="block text-xs font-bold text-inkDark mb-1.5">موقع التوصيل *</label>
+            <div class="grid grid-cols-2 gap-2.5">
+              <button type="button" id="zoneInsideBtn" onclick="setDeliveryZone('inside')"
+                      class="p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep bg-emeraldDeep/5">
+                <div class="text-xs font-extrabold text-emeraldDeep">داخل المدينة المنورة</div>
+                <div class="text-[11px] text-inkMuted mt-0.5">توصيل فوري + دفع عند الاستلام</div>
+              </button>
+              <button type="button" id="zoneOutsideBtn" onclick="setDeliveryZone('outside')"
+                      class="p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep/15 bg-white">
+                <div class="text-xs font-extrabold text-emeraldDeep">خارج المدينة المنورة</div>
+                <div class="text-[11px] text-inkMuted mt-0.5">حسب المنطقة • تحويل مسبق</div>
+              </button>
+            </div>
+            <p id="zonePolicyNote" class="text-xs text-emeraldDeep bg-amber-50 border border-amber-200 rounded-xl p-2.5 mt-2 leading-relaxed">
+              التوصيل داخل المدينة المنورة فوري مع رسوم توصيل حسب الموقع المرسل.
+            </p>
+          </div>
+
+          <!-- GPS Location Picker -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <label class="text-xs font-bold text-inkDark">العنوان / الحي أو الموقع الجغرافي (GPS)</label>
+              <button type="button" id="gpsBtn" onclick="detectGPSLocation()"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emeraldDeep text-honeyLight text-xs font-bold hover:bg-emeraldSoft transition cursor-pointer">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                <span>تحديد موقعي GPS</span>
+              </button>
+            </div>
+
+            <input id="customerAddress" type="text" placeholder="مثال: المدينة المنورة - حي العزيزية أو تفاصيل العنوان"
+                   class="w-full px-3.5 py-2.5 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm focus:outline-none focus:border-honeyGold" />
+
+            <div id="gpsStatusBox" class="hidden text-xs rounded-xl p-2.5 bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-center justify-between gap-2">
+              <span id="gpsStatusText" class="truncate">تم التقاط الموقع</span>
+              <a id="gpsMapLink" href="#" target="_blank" rel="noopener noreferrer" class="underline font-bold shrink-0">عرض الخريطة</a>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div>
+            <label class="block text-xs font-bold text-inkDark mb-1.5">طريقة الدفع *</label>
+            <div class="grid grid-cols-2 gap-2.5">
+              <label id="payCodLabel" class="flex items-center gap-2 p-3 rounded-xl border border-emeraldDeep/20 bg-creamBase cursor-pointer text-xs font-bold">
+                <input type="radio" name="paymentMethod" value="الدفع عند الاستلام (داخل المدينة المنورة)" checked onchange="togglePaymentBox()" class="accent-emeraldDeep" />
+                <span>الدفع عند الاستلام</span>
+              </label>
+              <label id="payTransferLabel" class="flex items-center gap-2 p-3 rounded-xl border border-emeraldDeep/20 bg-creamBase cursor-pointer text-xs font-bold">
+                <input type="radio" name="paymentMethod" value="تحويل بنكي (مصرف الراجحي)" onchange="togglePaymentBox()" class="accent-emeraldDeep" />
+                <span>تحويل بنكي</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Bank Details Box -->
+          <div id="bankDetailsCard" class="rounded-2xl bg-emeraldDeep/5 border border-honeyGold/35 p-3.5 space-y-2 text-xs">
+            <div class="font-extrabold text-emeraldDeep flex items-center justify-between">
+              <span>تحويل بنكي — مصرف الراجحي</span>
+              <button type="button" onclick="copyIban()" class="px-2.5 py-1 rounded-lg bg-emeraldDeep text-honeyLight font-bold cursor-pointer">نسخ الآيبان</button>
+            </div>
+            <div class="text-inkDark">الاسم للتحويل: <strong>آمنة عبد الكريم</strong></div>
+            <div class="font-mono font-bold text-emeraldDeep bg-white px-2.5 py-1.5 rounded-lg border border-honeyGold/20 select-all">
+              SA09 8000 0272 6080 1030 2900
+            </div>
+            <p class="text-[11px] text-inkMuted leading-relaxed">
+              لتأكيد الطلب يرجى ترك رسالة أو تحويل مبلغ العسل المطلوب وإرسال الإيصال والطلبات التي تودها عبر الواتساب.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Total & WhatsApp Submit -->
+      <div class="p-5 bg-white border-t border-honeyGold/25 space-y-3">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-inkMuted font-semibold">إجمالي قيمة العسل (قبل التوصيل):</span>
+          <span id="cartTotalPrice" class="text-2xl font-extrabold text-emeraldDeep">0 ريال</span>
+        </div>
+        <button type="button" onclick="sendOrderToWhatsApp()"
+                class="w-full py-3.5 px-5 rounded-2xl bg-[#128C7E] hover:bg-[#0e7468] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition cursor-pointer">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>إرسال وتأكيد الطلب عبر واتساب</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Honey Assistant Floating Button & Chat Modal -->
+  <button onclick="toggleChat()" aria-label="المساعد الذكي للعسل"
+          class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 px-4 py-3.5 rounded-full bg-emeraldDeep text-creamBase border border-honeyGold/60 shadow-luxury hover:scale-105 transition cursor-pointer">
+    <span class="w-8 h-8 rounded-full bg-gradient-to-br from-honeyGold to-honeyLight text-emeraldDeep flex items-center justify-center font-bold">
+      <i data-lucide="sparkles" class="w-4 h-4"></i>
+    </span>
+    <span class="text-xs sm:text-sm font-extrabold pr-1">اسأل عن العسل</span>
+  </button>
+
+  <div id="chatModal" class="fixed bottom-24 right-5 z-50 hidden w-[92vw] max-w-md rounded-3xl bg-white shadow-2xl border border-honeyGold/35 overflow-hidden flex-col max-h-[75vh]">
+    <div class="bg-emeraldDeep text-creamBase px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-honeyGold/20 border border-honeyGold/40 flex items-center justify-center text-honeyLight">
+          <i data-lucide="bot" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-sm font-extrabold text-white">مستشار مناحل آمنة الذكي</div>
+          <div class="text-[11px] text-honeyLight">يجيب عن الأنواع، الأسعار، التوصيل والتحويل</div>
+        </div>
+      </div>
+      <button onclick="toggleChat()" class="p-1.5 rounded-lg hover:bg-white/10 cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Quick Questions -->
+    <div class="px-3.5 py-2 bg-creamBase border-b border-honeyGold/15 flex gap-1.5 overflow-x-auto text-[11px]">
+      <button onclick="askQuickQuestion('ما هي أنواع العسل وأسعارها؟')" class="px-2.5 py-1 rounded-full bg-white border border-honeyGold/30 text-emeraldDeep font-bold shrink-0 hover:bg-honeyGold/10 cursor-pointer">الأنواع والأسعار</button>
+      <button onclick="askQuickQuestion('كيف التوصيل والدفع داخل وخارج المدينة؟')" class="px-2.5 py-1 rounded-full bg-white border border-honeyGold/30 text-emeraldDeep font-bold shrink-0 hover:bg-honeyGold/10 cursor-pointer">التوصيل والدفع</button>
+      <button onclick="askQuickQuestion('ما هي بيانات التحويل البنكي؟')" class="px-2.5 py-1 rounded-full bg-white border border-honeyGold/30 text-emeraldDeep font-bold shrink-0 hover:bg-honeyGold/10 cursor-pointer">بيانات التحويل</button>
+    </div>
+
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm bg-creamBase/50">
+      <!-- Messages populated by JS -->
+    </div>
+
+    <form onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-emeraldDeep/10 flex items-center gap-2">
+      <input id="chatInput" type="text" placeholder="اكتب سؤالك هنا..."
+             class="flex-1 px-3.5 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm focus:outline-none focus:border-honeyGold" />
+      <button type="submit" class="p-2.5 rounded-xl bg-emeraldDeep text-honeyLight hover:bg-emeraldSoft transition cursor-pointer">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Admin Panel Modal (Password Protected) -->
+  <div id="adminModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div onclick="closeAdminModal()" class="fixed inset-0 bg-black/60 backdrop-blur-xs"></div>
+    <div class="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-creamBase border border-honeyGold/40 shadow-2xl p-6 space-y-6">
+      <div class="flex items-center justify-between border-b border-emeraldDeep/10 pb-4">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="shield-check" class="w-6 h-6 text-emeraldDeep"></i>
+          <h3 class="font-display text-2xl font-bold text-emeraldDeep">لوحة إدارة المنحل</h3>
+        </div>
+        <button onclick="closeAdminModal()" class="p-2 rounded-xl hover:bg-black/5 cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Auth Step -->
+      <div id="adminLoginBox" class="space-y-4 py-4 max-w-sm mx-auto text-center">
+        <p class="text-sm text-inkMuted">أدخل كلمة المرور للوصول إلى إعدادات المنحل والأسعار والواتساب.</p>
+        <input id="adminPassInput" type="password" placeholder="كلمة المرور (الافتراضية 1234)"
+               class="w-full px-4 py-2.5 rounded-xl bg-white border border-emeraldDeep/20 text-center text-sm focus:outline-none focus:border-honeyGold" />
+        <button onclick="verifyAdminPassword()" class="w-full py-3 rounded-xl bg-emeraldDeep text-honeyLight font-bold text-sm hover:bg-emeraldSoft transition cursor-pointer">
+          دخول اللوحة
+        </button>
+      </div>
+
+      <!-- Admin Content Step -->
+      <div id="adminDashboardBox" class="hidden space-y-6">
+        <!-- WhatsApp & Gemini API -->
+        <div class="grid sm:grid-cols-2 gap-4 bg-white p-4 rounded-2xl border border-honeyGold/25">
+          <div>
+            <label class="block text-xs font-bold text-emeraldDeep mb-1">رقم الواتساب (بصيغة دولية مثل 966597176168)</label>
+            <input id="adminWhatsappInput" type="text" class="w-full px-3 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-emeraldDeep mb-1">مفتاح Gemini API (اختياري للشات الذكي)</label>
+            <input id="adminGeminiKeyInput" type="password" placeholder="AIza..." class="w-full px-3 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm" />
+          </div>
+        </div>
+
+        <!-- Products Pricing & Availability -->
+        <div class="bg-white p-4 rounded-2xl border border-honeyGold/25 space-y-3">
+          <h4 class="font-bold text-emeraldDeep text-sm">الأسعار وحالة التوفر (بالريال السعودي)</h4>
+          <div id="adminProductsList" class="space-y-3">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Add New Diary Entry -->
+        <div class="bg-white p-4 rounded-2xl border border-honeyGold/25 space-y-3">
+          <h4 class="font-bold text-emeraldDeep text-sm">إضافة تحديث جديد إلى يوميات المنحل</h4>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <input id="newDiaryTitle" type="text" placeholder="عنوان التحديث (مثال: تفقد خلايا السدر)"
+                   class="px-3 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm" />
+            <input id="newDiaryTag" type="text" placeholder="الوسم (مثال: رعاية النحل)"
+                   class="px-3 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm" />
+          </div>
+          <textarea id="newDiaryDesc" rows="2" placeholder="وصف مختصر لما تم إنجازه في المنحل..."
+                    class="w-full px-3 py-2 rounded-xl bg-creamBase border border-emeraldDeep/15 text-sm"></textarea>
+          <button onclick="addDiaryPost()" class="px-4 py-2 rounded-xl bg-emeraldDeep text-honeyLight text-xs font-bold hover:bg-emeraldSoft cursor-pointer">
+            + إضافة التحديث
+          </button>
+        </div>
+
+        <!-- Save & Backup Controls -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+          <div class="flex items-center gap-2">
+            <button onclick="exportBackupJSON()" class="px-3.5 py-2 rounded-xl bg-white border border-emeraldDeep/20 text-xs font-bold text-emeraldDeep hover:bg-creamBase cursor-pointer">
+              تصدير نسخة JSON
+            </button>
+            <label class="px-3.5 py-2 rounded-xl bg-white border border-emeraldDeep/20 text-xs font-bold text-emeraldDeep hover:bg-creamBase cursor-pointer">
+              <span>استيراد JSON</span>
+              <input type="file" accept=".json" onchange="importBackupJSON(event)" class="hidden" />
+            </label>
+          </div>
+
+          <button onclick="saveAdminChanges()" class="px-6 py-2.5 rounded-xl bg-gradient-to-l from-honeyGold to-honeyLight text-emeraldDeep font-extrabold text-sm shadow-goldGlow cursor-pointer">
+            حفظ جميع التعديلات
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'amna_honey_store_v1';
+    const DEFAULT_IBAN = 'SA09 8000 0272 6080 1030 2900';
+    const BENEFICIARY_NAME = 'آمنة عبد الكريم';
+
+    const defaultState = {
+      whatsapp: '966597176168',
+      adminPass: '1234',
+      geminiApiKey: '',
+      products: [
+        {
+          id: 'sidr',
+          name: 'عسل سدرة بلدي',
+          subtitle: 'قوام غني ونكهة أصيلة',
+          description: 'عسل سدرة طبيعي مختار بعناية، يتميز بقوامه الفاخر وطعمه الأصيل الذي يفضله عشاق العسل البلدي في المدينة المنورة وخارجها.',
+          available: true,
+          image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=900&q=80',
+          prices: {
+            quarter: 150,
+            half: 250,
+            kilo: 400
+          }
+        },
+        {
+          id: 'talh',
+          name: 'عسل طلح بلدي',
+          subtitle: 'نكهة برية مميزة وقيمة عالية',
+          description: 'عسل طلح طبيعي بنكهته البرية المميزة وقوامه المتوازن، يُعد من الخيارات المحبوبة للاستخدام اليومي المتواصل.',
+          available: true,
+          image: 'https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?auto=format&fit=crop&w=900&q=80',
+          prices: {
+            quarter: 150,
+            half: 250,
+            kilo: 400
+          }
+        },
+        {
+          id: 'samra',
+          name: 'عسل سمرة بلدي',
+          subtitle: 'لون داكن وطابع جبلي أصيل',
+          description: 'عسل سمرة بلدي ذو لون داكن غني وحضور مميز، يجمع بين العراقة والعناية المباشرة بالخلايا.',
+          available: true,
+          image: 'https://images.unsplash.com/photo-1471943311424-646905e22a1f?auto=format&fit=crop&w=900&q=80',
+          prices: {
+            quarter: 150,
+            half: 250,
+            kilo: 400
+          }
+        }
+      ],
+      diary: [
+        {
+          id: 'd1',
+          tag: 'رعاية النحل',
+          title: 'تفقد الخلايا وتهيئة بيئة النحل',
+          desc: 'متابعة دورية لخلايا النحل والاطمئنان على نشاطها وصحتها لضمان موسم إنتاج نظيف ومتوازن.',
+          image: 'https://images.unsplash.com/photo-1568526381923-caf3a52200fe?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'd2',
+          tag: 'فرز وتعبئة',
+          title: 'فرز العسل وتعبئته بأمانة',
+          desc: 'الاهتمام بنظافة الأدوات والعبوات والحفاظ على خصائص العسل الطبيعية دون تدخل يخل بجودته.',
+          image: 'https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'd3',
+          tag: 'خدمة العملاء',
+          title: 'تجهيز الطلبات وتوصيلها بسرعة',
+          desc: 'توصيل فوري داخل المدينة المنورة مع إمكانية الدفع عند الاستلام، وشحن منظم لخارج المدينة.',
+          image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=80'
+        }
+      ]
+    };
+
+    const weightLabels = {
+      quarter: 'ربع كيلو',
+      half: 'نصف كيلو',
+      kilo: 'كيلو'
+    };
+
+    let state = loadState();
+    let cart = [];
+    let selectedWeights = {
+      sidr: 'kilo',
+      talh: 'kilo',
+      samra: 'kilo'
+    };
+    let deliveryZone = 'inside'; // 'inside' | 'outside'
+    let gpsCoords = null; // { lat, lng, url }
+    let chatHistory = [
+      {
+        role: 'assistant',
+        text: 'أهلاً بك في مناحل آمنة عبد الكريم بالمدينة المنورة 🍯. كيف أقدر أساعدك اليوم؟ يمكنك السؤال عن أنواع العسل، الأسعار، التوصيل، أو بيانات التحويل.'
+      }
+    ];
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(defaultState);
+        const parsed = JSON.parse(raw);
+        return {
+          ...structuredClone(defaultState),
+          ...parsed,
+          products: Array.isArray(parsed.products) && parsed.products.length ? parsed.products : structuredClone(defaultState.products),
+          diary: Array.isArray(parsed.diary) && parsed.diary.length ? parsed.diary : structuredClone(defaultState.diary)
+        };
+      } catch {
+        return structuredClone(defaultState);
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      toastText.textContent = message;
+      toast.classList.remove('hidden');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2800);
+    }
+
+    function copyIban() {
+      navigator.clipboard?.writeText(DEFAULT_IBAN.replace(/\s+/g, ''));
+      showToast('تم نسخ رقم الآيبان بنجاح');
+    }
+
+    function formatDisplayPhone(waNumber) {
+      const cleaned = (waNumber || '').replace(/\D/g, '');
+      if (cleaned.startsWith('966') && cleaned.length === 12) {
+        return '0' + cleaned.slice(3);
+      }
+      return cleaned || '0597176168';
+    }
+
+    function updateHeaderLinks() {
+      const cleanWa = (state.whatsapp || '966597176168').replace(/\D/g, '');
+      const headerBtn = document.getElementById('headerWhatsappBtn');
+      if (headerBtn) {
+        headerBtn.href = `https://wa.me/${cleanWa}?text=${encodeURIComponent('السلام عليكم، أرغب بالاستفسار عن العسل المتوفر.')}`;
+      }
+      const footerPhone = document.getElementById('footerPhoneDisplay');
+      if (footerPhone) {
+        footerPhone.textContent = formatDisplayPhone(cleanWa);
+      }
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = state.products.map(prod => {
+        const currentWeight = selectedWeights[prod.id] || 'kilo';
+        const currentPrice = prod.prices[currentWeight] ?? 400;
+        return `
+          <div class="group rounded-3xl bg-white border border-honeyGold/25 shadow-luxury overflow-hidden flex flex-col justify-between transition hover:-translate-y-1">
+            <div>
+              <div class="relative h-56 overflow-hidden bg-emeraldDeep/5">
+                <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                <div class="absolute top-3 right-3">
+                  ${prod.available
+                    ? '<span class="px-3 py-1 rounded-full bg-emeraldDeep/90 text-honeyLight text-xs font-bold shadow-xs">متوفر الآن</span>'
+                    : '<span class="px-3 py-1 rounded-full bg-red-700/90 text-white text-xs font-bold shadow-xs">نفدت الكمية حالياً</span>'
+                  }
+                </div>
+              </div>
+
+              <div class="p-5 sm:p-6 space-y-4">
+                <div>
+                  <span class="text-xs font-bold text-honeyGold">${prod.subtitle}</span>
+                  <h3 class="text-2xl sm:text-3xl font-bold text-emeraldDeep mt-0.5">${prod.name}</h3>
+                  <p class="text-xs sm:text-sm text-inkMuted mt-2 leading-relaxed">${prod.description}</p>
+                </div>
+
+                <!-- Weight Selector -->
+                <div>
+                  <span class="block text-xs font-bold text-inkDark mb-2">اختر الوزن:</span>
+                  <div class="grid grid-cols-3 gap-2">
+                    ${['quarter', 'half', 'kilo'].map(wKey => {
+                      const active = currentWeight === wKey;
+                      return `
+                        <button type="button" onclick="selectProductWeight('${prod.id}', '${wKey}')"
+                                class="py-2 px-2 rounded-xl border text-xs font-bold transition cursor-pointer ${
+                                  active
+                                    ? 'bg-emeraldDeep text-honeyLight border-emeraldDeep shadow-xs'
+                                    : 'bg-creamBase text-inkDark border-emeraldDeep/15 hover:border-honeyGold'
+                                }">
+                          <div>${weightLabels[wKey]}</div>
+                          <div class="text-[11px] opacity-90">${prod.prices[wKey]} ر.س</div>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 flex items-center justify-between gap-3 border-t border-creamBase">
+              <div>
+                <span class="block text-[11px] text-inkMuted">السعر المختار</span>
+                <span class="text-2xl font-extrabold text-emeraldDeep">${currentPrice} <span class="text-xs font-bold">ريال</span></span>
+              </div>
+
+              <button type="button" ${!prod.available ? 'disabled' : ''} onclick="addToCart('${prod.id}')"
+                      class="px-5 py-3 rounded-2xl font-extrabold text-xs sm:text-sm flex items-center gap-2 transition ${
+                        prod.available
+                          ? 'bg-gradient-to-l from-honeyGold to-honeyLight text-emeraldDeep shadow-goldGlow hover:brightness-105 cursor-pointer'
+                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                      }">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>${prod.available ? 'أضف للسلة' : 'غير متوفر'}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    function selectProductWeight(productId, weightKey) {
+      selectedWeights[productId] = weightKey;
+      renderProducts();
+    }
+
+    function renderDiary() {
+      const grid = document.getElementById('diaryGrid');
+      grid.innerHTML = state.diary.map(item => `
+        <article class="rounded-3xl bg-white border border-honeyGold/20 overflow-hidden shadow-xs hover:shadow-luxury transition flex flex-col">
+          <div class="h-48 overflow-hidden bg-emeraldDeep/5">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-5 space-y-2 flex-1">
+            <span class="inline-block px-3 py-0.5 rounded-full bg-honeyGold/15 text-emeraldDeep text-xs font-bold">${item.tag}</span>
+            <h3 class="text-xl font-bold text-emeraldDeep">${item.title}</h3>
+            <p class="text-xs sm:text-sm text-inkMuted leading-relaxed">${item.desc}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function addToCart(productId) {
+      const prod = state.products.find(p => p.id === productId);
+      if (!prod || !prod.available) return;
+      const weight = selectedWeights[productId] || 'kilo';
+      const unitPrice = prod.prices[weight];
+      const existing = cart.find(i => i.productId === productId && i.weight === weight);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          key: `${productId}_${weight}`,
+          productId,
+          name: prod.name,
+          weight,
+          weightLabel: weightLabels[weight],
+          unitPrice,
+          qty: 1
+        });
+      }
+      updateCartUI();
+      showToast(`تمت إضافة ${prod.name} (${weightLabels[weight]}) إلى السلة`);
+    }
+
+    function changeCartQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartBadge');
+      const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+      badge.textContent = totalQty;
+
+      const totalPrice = cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
+      document.getElementById('cartTotalPrice').textContent = `${totalPrice} ريال`;
+
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 bg-white rounded-2xl border border-dashed border-honeyGold/40 space-y-2">
+            <i data-lucide="shopping-bag" class="w-8 h-8 text-honeyGold mx-auto"></i>
+            <p class="text-sm font-bold text-emeraldDeep">السلة فارغة حالياً</p>
+            <p class="text-xs text-inkMuted">اختر نوع العسل والوزن المناسب لإضافته إلى طلبك.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = cart.map((item, idx) => `
+        <div class="bg-white rounded-2xl p-3.5 border border-honeyGold/20 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-sm font-extrabold text-emeraldDeep">${item.name}</div>
+            <div class="text-xs text-inkMuted">${item.weightLabel} • ${item.unitPrice} ريال للعبوة</div>
+            <div class="text-xs font-bold text-honeyGold mt-0.5">المجموع: ${item.unitPrice * item.qty} ريال</div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="changeCartQty(${idx}, -1)" class="w-7 h-7 rounded-lg bg-creamBase border border-emeraldDeep/15 font-bold text-emeraldDeep cursor-pointer">-</button>
+            <span class="w-6 text-center text-xs font-extrabold">${item.qty}</span>
+            <button type="button" onclick="changeCartQty(${idx}, 1)" class="w-7 h-7 rounded-lg bg-emeraldDeep text-honeyLight font-bold cursor-pointer">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCart() {
+      updateCartUI();
+      document.getElementById('cartDrawer').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.add('hidden');
+    }
+
+    function setDeliveryZone(zone) {
+      deliveryZone = zone;
+      const insideBtn = document.getElementById('zoneInsideBtn');
+      const outsideBtn = document.getElementById('zoneOutsideBtn');
+      const note = document.getElementById('zonePolicyNote');
+      const codRadio = document.querySelector('input[name="paymentMethod"][value^="الدفع عند الاستلام"]');
+      const transferRadio = document.querySelector('input[name="paymentMethod"][value^="تحويل بنكي"]');
+      const codLabel = document.getElementById('payCodLabel');
+
+      if (zone === 'inside') {
+        insideBtn.className = 'p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep bg-emeraldDeep/5';
+        outsideBtn.className = 'p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep/15 bg-white';
+        note.textContent = 'التوصيل داخل المدينة المنورة فوري مع رسوم توصيل حسب الموقع المرسل، ويتوفر الدفع عند الاستلام.';
+        codRadio.disabled = false;
+        codLabel.classList.remove('opacity-45', 'cursor-not-allowed');
+      } else {
+        outsideBtn.className = 'p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep bg-emeraldDeep/5';
+        insideBtn.className = 'p-3 rounded-xl border-2 text-right transition cursor-pointer border-emeraldDeep/15 bg-white';
+        note.textContent = 'التوصيل خارج المدينة المنورة حسب المنطقة، ولا يتم التوصيل عند الاستلام خارج المدينة (التحويل البنكي المسبق فقط).';
+        codRadio.disabled = true;
+        transferRadio.checked = true;
+        codLabel.classList.add('opacity-45', 'cursor-not-allowed');
+      }
+      togglePaymentBox();
+    }
+
+    function togglePaymentBox() {
+      const selected = document.querySelector('input[name="paymentMethod"]:checked')?.value || '';
+      const bankCard = document.getElementById('bankDetailsCard');
+      if (selected.includes('تحويل') || deliveryZone === 'outside') {
+        bankCard.classList.remove('hidden');
+      } else {
+        bankCard.classList.remove('hidden'); // Keep visible for clarity while highlighting COD
+      }
+    }
+
+    function detectGPSLocation() {
+      const gpsBtn = document.getElementById('gpsBtn');
+      const statusBox = document.getElementById('gpsStatusBox');
+      const statusText = document.getElementById('gpsStatusText');
+      const mapLink = document.getElementById('gpsMapLink');
+
+      if (!navigator.geolocation) {
+        showToast('المتصفح لا يدعم GPS، يمكنك كتابة العنوان يدوياً');
+        return;
+      }
+
+      gpsBtn.disabled = true;
+      gpsBtn.innerHTML = '<span>جاري التحديد...</span>';
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const lat = pos.coords.latitude.toFixed(6);
+          const lng = pos.coords.longitude.toFixed(6);
+          const url = `https://maps.google.com/?q=${lat},${lng}`;
+          gpsCoords = { lat, lng, url };
+
+          statusBox.classList.remove('hidden');
+          statusText.textContent = `تم تحديد الموقع (${lat}, ${lng})`;
+          mapLink.href = url;
+
+          const addrInput = document.getElementById('customerAddress');
+          if (!addrInput.value.trim()) {
+            addrInput.value = `موقع GPS (${lat}, ${lng})`;
+          }
+
+          gpsBtn.disabled = false;
+          gpsBtn.innerHTML = '<i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>تحديث GPS</span>';
+          lucide.createIcons();
+          showToast('تم تحديد موقعك الجغرافي بنجاح');
+        },
+        (err) => {
+          gpsBtn.disabled = false;
+          gpsBtn.innerHTML = '<i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>تحديد موقعي GPS</span>';
+          lucide.createIcons();
+          showToast('تعذر الوصول للموقع، يمكنك كتابة الحي والعنوان يدوياً');
+        },
+        { enableHighAccuracy: true, timeout: 10000 }
+      );
+    }
+
+    function sendOrderToWhatsApp() {
+      if (cart.length === 0) {
+        showToast('أضف صنفاً واحداً على الأقل إلى السلة أولاً');
+        return;
+      }
+
+      const name = document.getElementById('customerName').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+      const payment = document.querySelector('input[name="paymentMethod"]:checked')?.value || 'تحويل بنكي (مصرف الراجحي)';
+      const totalPrice = cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
+      const zoneLabel = deliveryZone === 'inside' ? 'داخل المدينة المنورة (توصيل فوري)' : 'خارج المدينة المنورة (حسب المنطقة)';
+
+      let lines = [
+        'السلام عليكم أستاذة آمنة عبد الكريم، أرغب بتأكيد طلب العسل التالي:',
+        ''
+      ];
+
+      if (name) lines.push(`• الاسم: ${name}`);
+      lines.push(`• نطاق التوصيل: ${zoneLabel}`);
+      if (address) lines.push(`• العنوان / الحي: ${address}`);
+      if (gpsCoords?.url) lines.push(`• موقع GPS على الخريطة: ${gpsCoords.url}`);
+      lines.push(`• طريقة الدفع: ${payment}`);
+      lines.push('');
+      lines.push('الطلبات المطلوبة:');
+
+      cart.forEach((item, i) => {
+        lines.push(`${i + 1}) ${item.name} — ${item.weightLabel} × ${item.qty} = ${item.unitPrice * item.qty} ريال`);
+      });
+
+      lines.push('');
+      lines.push(`الإجمالي (قبل التوصيل): ${totalPrice} ريال`);
+      lines.push('');
+      lines.push('ملاحظة: لتأكيد الطلب يرجى إرسال الإيصال في حال التحويل البنكي، أو تأكيد الموقع للتوصيل الفوري.');
+
+      const cleanWa = (state.whatsapp || '966597176168').replace(/\D/g, '');
+      const waUrl = `https://wa.me/${cleanWa}?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Chat Assistant Logic (Local Smart + Optional Gemini API)
+    function toggleChat() {
+      const modal = document.getElementById('chatModal');
+      modal.classList.toggle('hidden');
+      modal.classList.toggle('flex');
+      renderChatMessages();
+      lucide.createIcons();
+    }
+
+    function renderChatMessages() {
+      const box = document.getElementById('chatMessages');
+      box.innerHTML = chatHistory.map(msg => `
+        <div class="flex ${msg.role === 'user' ? 'justify-start' : 'justify-end'}">
+          <div class="max-w-[85%] rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm leading-relaxed whitespace-pre-line ${
+            msg.role === 'user'
+              ? 'bg-emeraldDeep text-white rounded-br-none'
+              : 'bg-white text-inkDark border border-honeyGold/25 rounded-bl-none shadow-2xs'
+          }">${msg.text}</div>
+        </div>
+      `).join('');
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function askQuickQuestion(question) {
+      document.getElementById('chatInput').value = question;
+      handleChatSubmit(new Event('submit'));
+    }
+
+    function buildLocalKnowledgeReply(query) {
+      const q = query.toLowerCase();
+      if (q.includes('سعر') || q.includes('أسعار') || q.includes('نوع') || q.includes('أنواع') || q.includes('سدر') || q.includes('طلح') || q.includes('سمر')) {
+        const pList = state.products.map(p =>
+          `• ${p.name} (${p.available ? 'متوفر' : 'غير متوفر حالياً'}): ربع كيلو ${p.prices.quarter} ريال، نصف كيلو ${p.prices.half} ريال، كيلو ${p.prices.kilo} ريال.`
+        ).join('\n');
+        return `متوفر لدينا في مناحل آمنة عبد الكريم:\n${pList}\n\nيمكنك اختيار الوزن وإضافته للسلة مباشرة.`;
+      }
+      if (q.includes('توصيل') || q.includes('شحن') || q.includes('دفع') || q.includes('استلام') || q.includes('مدينه') || q.includes('مدينة') || q.includes('gps') || q.includes('موقع')) {
+        return `آلية التوصيل والدفع:\n• داخل المدينة المنورة: التوصيل فوري مع رسوم توصيل حسب الموقع المرسل (يمكنك تحديد موقعك عبر GPS في السلة)، ويتوفر الدفع عند الاستلام.\n• خارج المدينة المنورة: التوصيل حسب المنطقة، ولا يتم الدفع عند الاستلام خارج المدينة؛ الدفع بالتحويل البنكي المسبق فقط.`;
+      }
+      if (q.includes('تحويل') || q.includes('ايبان') || q.includes('آيبان') || q.includes('بنك') || q.includes('راجحي') || q.includes('حساب')) {
+        return `بيانات التحويل البنكي:\n• المصرف: مصرف الراجحي\n• الاسم للتحويل: ${BENEFICIARY_NAME}\n• الآيبان: ${DEFAULT_IBAN}\n\nلتأكيد الطلب يرجى ترك رسالة أو تحويل مبلغ العسل المطلوب وإرسال الإيصال والطلبات عبر الواتساب.`;
+      }
+      return `أهلاً بك! تتوفر لدينا أنواع العسل (سدرة، طلح، سمرة) بأسعار: ربع كيلو 150 ريال، نصف كيلو 250 ريال، وكيلو 400 ريال. التوصيل داخل المدينة فوري مع إمكانية الدفع عند الاستلام، وخارج المدينة بالتحويل المسبق فقط. كما يمكنك التواصل مباشرة عبر الواتساب (${formatDisplayPhone(state.whatsapp)}).`;
+    }
+
+    async function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      chatHistory.push({ role: 'user', text });
+      input.value = '';
+      renderChatMessages();
+
+      if (state.geminiApiKey && state.geminiApiKey.trim().startsWith('AIza')) {
+        try {
+          const systemPrompt = `أنت مساعد ذكي ودود ومهذب لمشروع "مناحل آمنة عبد الكريم" في المدينة المنورة. أجب بالعربية بوضوح ودقة بناءً على المعلومات التالية فقط:
+- الأنواع المتوفرة: عسل سدرة بلدي، عسل طلح بلدي، عسل سمرة بلدي.
+- الأسعار الموحدة لكل نوع: ربع كيلو 150 ريال، نصف كيلو 250 ريال، كيلو 400 ريال.
+- التوصيل داخل المدينة المنورة: فوري مع رسوم توصيل حسب الموقع المرسل، ويدعم ميزة تحديد الموقع عبر GPS في السلة، ويوجد دفع عند الاستلام داخل المدينة المنورة فقط.
+- التوصيل خارج المدينة المنورة: حسب المنطقة، ولا يتم التوصيل عند الاستلام خارج المدينة (تحويل مسبق فقط).
+- التحويل البنكي: مصرف الراجحي، الاسم: آمنة عبد الكريم، الآيبان: ${DEFAULT_IBAN}.
+- لتأكيد الطلب: ترك رسالة أو تحويل المبلغ وإرسال الإيصال والطلبات عبر الواتساب (${formatDisplayPhone(state.whatsapp)}).`;
+
+          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(state.geminiApiKey.trim())}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: `${systemPrompt}\n\nسؤال العميل: ${text}` }] }]
+            })
+          });
+          const data = await res.json();
+          const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || buildLocalKnowledgeReply(text);
+          chatHistory.push({ role: 'assistant', text: reply });
+          renderChatMessages();
+          return;
+        } catch {
+          // Fallback to local knowledge reply
+        }
+      }
+
+      const localReply = buildLocalKnowledgeReply(text);
+      chatHistory.push({ role: 'assistant', text: localReply });
+      renderChatMessages();
+    }
+
+    // Admin Panel Functions
+    function openAdminModal() {
+      document.getElementById('adminModal').classList.remove('hidden');
+      document.getElementById('adminModal').classList.add('flex');
+      document.getElementById('adminLoginBox').classList.remove('hidden');
+      document.getElementById('adminDashboardBox').classList.add('hidden');
+      document.getElementById('adminPassInput').value = '';
+      lucide.createIcons();
+    }
+
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.add('hidden');
+      document.getElementById('adminModal').classList.remove('flex');
