@@ -34,13 +34,13 @@ export function FeaturesSection() {
       className="py-12 sm:py-16 border-b border-[#F3D598]/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
             return (
               <div
                 key={feat.id}
-                className="info-box rounded-2xl glass-enchanted p-5 flex flex-col gap-2.5"
+                className="info-box rounded-2xl glass-enchanted p-3.5 sm:p-5 flex flex-col gap-2"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#F7D78C]/15 border border-[#F7D78C]/35 text-[#F7D78C] flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5" />

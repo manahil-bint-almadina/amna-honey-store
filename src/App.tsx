@@ -182,14 +182,56 @@ export default function App() {
         aria-hidden="true"
         className="fixed inset-0 -z-10 bg-[#3D252C] pointer-events-none overflow-hidden"
       >
+        {/* Desktop & Tablet Landscape: Full 16:9 composition */}
         <img
           src={ENCHANTED_BACKDROP_IMAGE}
           alt=""
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-[26%_top] md:object-top opacity-100 contrast-[1.03] saturate-[1.05]"
+          className="hidden md:block w-full h-full object-cover object-top opacity-100 contrast-[1.03] saturate-[1.05]"
         />
+
+        {/* Mobile Portrait: Blurred atmospheric base + crisp uncropped upper enchanted scene + lower honey lake */}
+        <img
+          src={ENCHANTED_BACKDROP_IMAGE}
+          alt=""
+          referrerPolicy="no-referrer"
+          className="md:hidden absolute inset-0 w-full h-full object-cover object-center scale-110 blur-xl brightness-90 saturate-110"
+        />
+        <div
+          className="md:hidden absolute inset-x-0 top-14 h-[35vh] overflow-hidden"
+          style={{
+            maskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, black 14%, black 72%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, black 14%, black 72%, transparent 100%)',
+          }}
+        >
+          <img
+            src={ENCHANTED_BACKDROP_IMAGE}
+            alt=""
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-[42%_top] contrast-[1.04] saturate-[1.08]"
+          />
+        </div>
+        <div
+          className="md:hidden absolute inset-x-0 bottom-0 h-[38vh] overflow-hidden"
+          style={{
+            maskImage:
+              'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 60%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 60%, transparent 100%)',
+          }}
+        >
+          <img
+            src={ENCHANTED_BACKDROP_IMAGE}
+            alt=""
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-bottom contrast-[1.02] saturate-[1.06]"
+          />
+        </div>
+
         <EnchantedMotionLayer variant="ambient" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2A161C]/18 via-transparent to-[#2A161C]/32" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2A161C]/15 via-transparent to-[#2A161C]/30" />
       </div>
 
       {/* Floating Background Flowers */}
