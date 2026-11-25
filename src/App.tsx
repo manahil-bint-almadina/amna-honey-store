@@ -186,7 +186,7 @@ export default function App() {
           src={ENCHANTED_BACKDROP_IMAGE}
           alt=""
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center opacity-90"
+          className="w-full h-full object-cover object-top opacity-90"
         />
         <EnchantedMotionLayer variant="ambient" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#3E242C]/50 via-[#664148]/42 to-[#321C22]/64" />
