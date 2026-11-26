@@ -183,7 +183,7 @@ export function QuickOrderSection({
                     key={prod.id}
                     value={prod.id}
                     disabled={!prod.available}
-                    className="bg-[#331B16] text-[#FFF9F2]"
+                    className="bg-[#FFFBF5] text-[#2A1608]"
                   >
                     {prod.name}
                     {!prod.available ? ' (غير متوفر حالياً)' : ''}
