@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
@@ -47,8 +48,30 @@ function formatDisplayPhone(waNumber?: string): string {
   return cleaned || '0597176168';
 }
 
+function resolvePublicBaseUrl(req: express.Request): string {
+  const envUrl = process.env.APP_URL?.trim();
+  if (envUrl && /^https?:\/\//i.test(envUrl)) {
+    return envUrl.replace(/\/+$/, '');
+  }
+  const forwardedProto = req.get('x-forwarded-proto')?.split(',')[0]?.trim();
+  const proto = forwardedProto || req.protocol || 'https';
+  const host = req.get('x-forwarded-host')?.split(',')[0]?.trim() || req.get('host');
+  return host ? `${proto}://${host}`.replace(/\/+$/, '') : '';
+}
+
+function injectAbsoluteMetaUrls(html: string, baseUrl: string): string {
+  if (!baseUrl) return html;
+  return html
+    .replace('<!-- canonical-link -->', `<link rel="canonical" href="${baseUrl}/" />`)
+    .replace(/(<meta\s+property="og:url"\s+content=")\.\/(")/gi, `$1${baseUrl}/$2`)
+    .replace(/\.\/og-share\.jpg/g, `${baseUrl}/og-share.jpg`)
+    .replace(/\.\/apple-touch-icon\.png/g, `${baseUrl}/apple-touch-icon.png`)
+    .replace(/\.\/favicon\.png/g, `${baseUrl}/favicon.png`);
+}
+
 async function startServer() {
   const app = express();
+  app.set('trust proxy', true);
   app.use(express.json({ limit: '1mb' }));
 
   app.post('/api/chat', async (req, res) => {
@@ -146,12 +169,24 @@ ${productsText}
       server: { middlewareMode: true },
       appType: 'spa',
     });
+    app.get(['/', '/index.html'], async (req, res, next) => {
+      try {
+        const rawHtml = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        const transformed = await vite.transformIndexHtml(req.originalUrl, rawHtml);
+        const finalHtml = injectAbsoluteMetaUrls(transformed, resolvePublicBaseUrl(req));
+        res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(finalHtml);
+      } catch (err) {
+        next(err);
+      }
+    });
     app.use(vite.middlewares);
   } else {
     const distPath = path.resolve(__dirname, 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (_req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+    const distIndexHtml = fs.readFileSync(path.join(distPath, 'index.html'), 'utf-8');
+    app.use(express.static(distPath, { index: false }));
+    app.get('*', (req, res) => {
+      const finalHtml = injectAbsoluteMetaUrls(distIndexHtml, resolvePublicBaseUrl(req));
+      res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(finalHtml);
     });
   }
 

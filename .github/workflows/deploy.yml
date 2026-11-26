@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: "22"
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -37,8 +38,14 @@ jobs:
       - name: Verify build output
         run: |
           test -s dist/index.html
+          test -s dist/og-share.jpg
           grep -Fq './assets/' dist/index.html
           ! grep -Fq '/src/main.tsx' dist/index.html
+          SITE_URL="${{ steps.pages.outputs.base_url }}"
+          SITE_URL="${SITE_URL%/}"
+          if [ -n "$SITE_URL" ]; then
+            node -e "const fs=require('fs');const u=process.argv[1];let h=fs.readFileSync('dist/index.html','utf8');h=h.replace('<!-- canonical-link -->','<link rel=\"canonical\" href=\"'+u+'/\" />').replaceAll('./og-share.jpg',u+'/og-share.jpg').replaceAll('./apple-touch-icon.png',u+'/apple-touch-icon.png').replaceAll('./favicon.png',u+'/favicon.png').replace('property=\"og:url\" content=\"./\"','property=\"og:url\" content=\"'+u+'/\"');fs.writeFileSync('dist/index.html',h);" "$SITE_URL"
+          fi
           touch dist/.nojekyll
           cp dist/index.html dist/404.html
       - name: Upload artifact

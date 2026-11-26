@@ -51,6 +51,32 @@ export default function App() {
   const toastTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
+    const baseHref = (window.location.origin + window.location.pathname).replace(/\/+$/, '');
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = `${baseHref}/`;
+      document.head.appendChild(canonical);
+    } else if (canonical.getAttribute('href') === './') {
+      canonical.href = `${baseHref}/`;
+    }
+    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (ogUrl && ogUrl.getAttribute('content') === './') {
+      ogUrl.content = `${baseHref}/`;
+    }
+    document
+      .querySelectorAll<HTMLMetaElement>(
+        'meta[property="og:image"], meta[property="og:image:secure_url"], meta[name="twitter:image"]'
+      )
+      .forEach((tag) => {
+        if (tag.getAttribute('content') === './og-share.jpg') {
+          tag.content = `${baseHref}/og-share.jpg`;
+        }
+      });
+  }, []);
+
+  useEffect(() => {
     const onHashChange = () => {
       const next = resolveHashRoute();
       setRoute(next);
